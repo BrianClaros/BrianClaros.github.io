@@ -2,7 +2,7 @@
 
 ## Estructura
 
-- `index.html`: landing completa (markup, estilos y script de traducción ES/EN inline).
+- `index.html`: landing completa (markup, estilos y script inline: traducción ES/EN vía atributos `data-en`, tema claro/oscuro, menú mobile y animaciones de scroll).
 - `assets/img/`: foto de perfil optimizada (`brian.webp`) e imagen para Open Graph (`brian-og.jpg`).
 - `assets/favicon.svg`: favicon del sitio.
 - `cv.md` / `cv_en.md`: CV fuente en español e inglés.

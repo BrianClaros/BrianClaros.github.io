@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description"
     content="Brian Claros — Ingeniero en Informática y Senior Full Stack Developer: React.js, Vue.js, Python, Django, FastAPI, RAG e integraciones con LLMs.">
+  <meta name="theme-color" content="#1d4ed8">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://brianclaros.github.io/portfolio/">
   <meta property="og:title" content="Brian Claros | Senior Full Stack Developer · AI">
@@ -18,40 +19,108 @@
   <meta name="twitter:card" content="summary">
   <title>Brian Claros | Senior Full Stack Developer · AI</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://brianclaros.github.io/portfolio/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.dataset.theme = 'dark';
+      } catch (e) { }
+    })();
+  </script>
   <style>
     :root {
-      --bg: #091321;
-      --surface: #101f32;
-      --surface-2: #162a43;
-      --text: #eef4fb;
-      --muted: #a7b7ca;
-      --line: #29435f;
-      --blue: #55d9ff;
-      --coral: #ff846d;
-      --yellow: #ffd564;
-      --mint: #c7ff62
+      --blue: #1d4ed8;
+      --blue-2: #2563eb;
+      --sky: #60a5fa;
+      --cyan: #06b6d4;
+      --ice: #cffafe;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --bg: #ffffff;
+      --bg-2: #f1f5fb;
+      --card-bg: #ffffff;
+      --nav-bg: #ffffffd9;
+      --border: #1d4ed81a;
+      --border-hover: #1d4ed840;
+      --tint-05: #1d4ed80d;
+      --tint-08: #1d4ed814;
+      --tint-15: #1d4ed826;
+      --cyan-10: #06b6d41a;
+      --cyan-25: #06b6d440;
+      --title: var(--blue);
+      --tech-color: var(--blue);
+      --shadow: 0 10px 28px #0f172a0f, inset 0 1px 0 #ffffffe6;
+      --shadow-hover: 0 24px 60px #1d4ed81f, 0 8px 24px #00000014;
+      --stripe: linear-gradient(90deg, var(--blue), var(--cyan), #7dd3fc);
+      --head: Poppins, system-ui, sans-serif;
+      --body: Inter, system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace
     }
 
-    * {
-      box-sizing: border-box
+    [data-theme=dark] {
+      --blue: #60a5fa;
+      --blue-2: #3b82f6;
+      --sky: #93c5fd;
+      --cyan: #22d3ee;
+      --ice: #164e63;
+      --text-primary: #e5edf8;
+      --text-secondary: #b3c0d4;
+      --text-muted: #8796ad;
+      --bg: #0a1120;
+      --bg-2: #0d1628;
+      --card-bg: #111c32e6;
+      --nav-bg: #0a1120e6;
+      --border: #60a5fa24;
+      --border-hover: #60a5fa55;
+      --tint-05: #60a5fa0d;
+      --tint-08: #60a5fa17;
+      --tint-15: #60a5fa29;
+      --cyan-10: #22d3ee1a;
+      --cyan-25: #22d3ee40;
+      --tech-color: var(--sky);
+      --shadow: 0 10px 28px #0000004d;
+      --shadow-hover: 0 24px 60px #3b82f62e, 0 8px 24px #00000040;
+      color-scheme: dark
+    }
+
+    *,
+    :before,
+    :after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
     }
 
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px
     }
 
     body {
-      margin: 0;
-      overflow-x: hidden;
       background: var(--bg);
-      color: var(--text);
-      font-family: Outfit, sans-serif;
-      line-height: 1.55
+      color: var(--text-secondary);
+      font-family: var(--body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background .3s, color .3s
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--text-primary);
+      font-family: var(--head);
+      font-weight: 800;
+      line-height: 1.1
     }
 
     a {
@@ -59,996 +128,2154 @@
       text-decoration: none
     }
 
-    .wrap {
-      width: min(1120px, calc(100% - 48px));
-      margin: auto
+    img {
+      display: block;
+      max-width: 100%
     }
 
-    .mono,
-    .nav a,
-    .eyebrow,
-    .tag,
-    .period {
-      font-family: "DM Mono", monospace;
-      letter-spacing: .04em
+    ul {
+      list-style: none
     }
 
-    .nav {
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--line)
+    svg {
+      flex-shrink: 0
     }
 
-    .brand {
-      font-weight: 800;
-      font-size: .95rem
-    }
-
-    .brand i {
-      color: var(--coral);
-      font-style: normal
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 26px
-    }
-
-    .nav a {
-      color: var(--muted);
-      font-size: .68rem
-    }
-
-    .nav a:hover {
+    ::selection {
+      background: var(--tint-15);
       color: var(--blue)
     }
 
-    .nav-cv,
-    .lang-toggle {
-      padding: 8px 11px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--text);
-      font: 500 .67rem "DM Mono", monospace
+    ::-webkit-scrollbar {
+      width: 8px
     }
 
-    .lang-toggle {
+    ::-webkit-scrollbar-track {
+      background: var(--bg-2)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--blue), var(--cyan));
+      border-radius: 4px
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      z-index: 10000;
+      padding: .5rem 1rem;
+      border-radius: 0 0 8px 8px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 600;
+      transition: top .2s
+    }
+
+    .skip-link:focus {
+      top: 0
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+      border-radius: 4px
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem
+    }
+
+    /* reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .5s ease-out, transform .5s ease-out
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none
+      }
+
+      *,
+      :before,
+      :after {
+        animation: none !important
+      }
+    }
+
+    /* navbar */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      z-index: 1000;
+      width: 88%;
+      max-width: 1200px;
+      height: 60px;
+      transform: translateX(-50%);
+      border: 1px solid var(--border);
+      border-radius: 60px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 40px #0000000d;
+      transition: all .4s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .navbar.scrolled {
+      top: 10px;
+      width: 95%;
+      border-radius: 30px
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 1.5rem
+    }
+
+    .navbar-logo {
+      color: var(--blue);
+      font-family: var(--mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: color .3s
+    }
+
+    .navbar-logo span {
+      color: var(--cyan)
+    }
+
+    .navbar-logo:hover {
+      color: var(--cyan)
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem
+    }
+
+    .navbar-links a,
+    .mobile-menu a.mm-link {
+      position: relative;
+      padding: .5rem 0;
+      color: var(--text-muted);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .3s
+    }
+
+    .navbar-links a:before,
+    .mobile-menu a.mm-link:before {
+      content: "#";
+      margin-right: .3rem;
+      color: var(--cyan);
+      font-family: var(--mono);
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .navbar-links a:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      transition: width .4s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .navbar-links a:hover,
+    .navbar-links a.active {
+      color: var(--text-primary)
+    }
+
+    .navbar-links a:hover:before,
+    .navbar-links a.active:before,
+    .mobile-menu a.mm-link:hover:before,
+    .mobile-menu a.mm-link.active:before {
+      opacity: 1
+    }
+
+    .navbar-links a:hover:after,
+    .navbar-links a.active:after {
+      width: 100%
+    }
+
+    .navbar-social,
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-left: 1rem;
+      padding-left: 1rem;
+      border-left: 1px solid var(--border)
+    }
+
+    .navbar-actions {
+      gap: .5rem;
+      margin-left: .75rem;
+      padding-left: .75rem
+    }
+
+    .navbar-social a {
+      display: flex;
+      color: var(--text-muted);
+      transition: all .3s
+    }
+
+    .navbar-social a:hover {
+      color: var(--blue);
+      transform: translateY(-2px)
+    }
+
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--tint-05);
+      color: var(--text-muted);
+      font: 700 .7rem var(--mono);
+      cursor: pointer;
+      transition: all .3s
+    }
+
+    .icon-btn:hover {
+      border-color: var(--cyan-25);
+      background: var(--cyan-10);
+      color: var(--cyan)
+    }
+
+    .icon-btn.cv {
+      width: auto;
+      padding: 0 .7rem;
+      border-radius: 99px
+    }
+
+    .theme-toggle .moon,
+    [data-theme=dark] .theme-toggle .sun {
+      display: none
+    }
+
+    [data-theme=dark] .theme-toggle .moon {
+      display: block
+    }
+
+    .navbar-toggle {
+      display: none;
+      padding: .5rem;
+      border: 0;
+      background: none;
+      color: var(--blue);
       cursor: pointer
     }
 
-    .nav-actions {
+    .mobile-menu {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      z-index: 999;
+      display: none;
+      width: 95%;
+      padding: 1rem 1.5rem;
+      transform: translateX(-50%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 40px #0000001a
+    }
+
+    .mobile-menu.open {
+      display: block
+    }
+
+    .mobile-menu a.mm-link {
+      display: block;
+      padding: .75rem;
+      border-radius: 8px
+    }
+
+    .mobile-menu a.mm-link:hover,
+    .mobile-menu a.mm-link.active {
+      background: var(--tint-05);
+      color: var(--blue)
+    }
+
+    .mobile-bottom {
       display: flex;
-      gap: 8px
+      align-items: center;
+      gap: 1rem;
+      margin-top: .5rem;
+      padding: .75rem;
+      border-top: 1px solid var(--border)
     }
 
+    .mobile-bottom a:not(.icon-btn) {
+      display: flex;
+      color: var(--text-muted)
+    }
+
+    .mobile-bottom .spacer {
+      flex: 1
+    }
+
+    /* hero */
     .hero {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 50px;
+      position: relative;
+      display: flex;
       align-items: center;
-      padding: 98px 0 76px
+      justify-content: center;
+      min-height: 100vh;
+      padding: 110px 0 80px;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--bg) 0, var(--bg-2) 100%)
     }
 
-    .available {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 22px;
-      padding: 6px 9px;
-      border: 1px solid #36526f;
-      border-radius: 99px;
-      color: var(--muted);
-      font: 500 .67rem "DM Mono", monospace
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none
     }
 
-    .available i {
-      width: 7px;
-      height: 7px;
+    .hero-bg:before,
+    .hero-bg:after {
+      content: "";
+      position: absolute;
       border-radius: 50%;
-      background: var(--mint)
+      animation: float 15s ease-in-out infinite
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0
+    .hero-bg:before {
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: var(--blue);
+      filter: blur(110px);
+      opacity: .1
     }
 
-    .role-label {
+    .hero-bg:after {
+      bottom: -120px;
+      left: -120px;
+      width: 420px;
+      height: 420px;
+      background: var(--cyan);
+      filter: blur(90px);
+      opacity: .08;
+      animation-delay: 3s
+    }
+
+    .hero-grid-pattern {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(var(--tint-15) 1px, transparent 0);
+      background-size: 22px 22px;
+      mask-image: radial-gradient(ellipse at 70% 40%, #000 0, transparent 60%);
+      -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 0, transparent 60%)
+    }
+
+    @keyframes float {
+
+      0%,
+      to {
+        transform: translate(0) scale(1)
+      }
+
+      25% {
+        transform: translate(50px, -30px) scale(1.1)
+      }
+
+      50% {
+        transform: translate(-30px, 50px) scale(.9)
+      }
+
+      75% {
+        transform: translate(40px, 30px) scale(1.05)
+      }
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+      padding: .375rem 1rem;
+      border: 1px solid var(--tint-15);
+      border-radius: 99px;
+      background: var(--tint-08);
       color: var(--blue);
-      font: 500 .83rem "DM Mono", monospace
+      font: .85rem var(--mono)
     }
 
-    .hero h1 {
-      max-width: 700px;
-      margin-top: 16px;
-      font-size: clamp(3.5rem, 6.6vw, 6.5rem);
-      line-height: .9;
-      letter-spacing: -.075em
+    .hero-badge i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 #22c55e80;
+      animation: ping 2s infinite
     }
 
-    .hero h1 em {
-      font-family: Fraunces, serif;
-      font-style: normal;
-      color: var(--coral);
+    @keyframes ping {
+      0% {
+        box-shadow: 0 0 0 0 #22c55e80
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px #22c55e00
+      }
+
+      to {
+        box-shadow: 0 0 0 0 #22c55e00
+      }
+    }
+
+    .hero-title {
+      margin-bottom: 1rem;
+      color: var(--title);
+      font-size: clamp(2.5rem, 6vw, 4.5rem)
+    }
+
+    .grad {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent
+    }
+
+    .hero-subtitle {
+      margin-bottom: .75rem;
+      color: var(--text-secondary);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 300
+    }
+
+    .hero-subtitle b {
+      color: var(--text-primary);
       font-weight: 600
     }
 
-    .hero-copy {
-      max-width: 610px;
-      margin-top: 25px;
-      color: var(--muted);
-      font-size: 1.13rem
+    .hero-tagline {
+      max-width: 580px;
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1.08rem
     }
 
-    .hero-copy strong {
-      color: var(--text)
+    .hero-stack {
+      max-width: 580px;
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+      font: .82rem var(--mono);
+      letter-spacing: .02em
     }
 
-    .actions {
+    .hero-stack b {
+      color: var(--cyan);
+      font-weight: 400
+    }
+
+    .hero-actions {
       display: flex;
-      gap: 11px;
       flex-wrap: wrap;
-      margin-top: 28px
+      gap: 1rem
     }
 
-    .button {
-      padding: 13px 17px;
-      background: var(--mint);
-      color: #081322;
-      border-radius: 3px;
-      font-weight: 800;
-      font-size: .86rem
-    }
-
-    .button.alt {
-      background: transparent;
-      border: 1px solid var(--line);
-      color: var(--text)
-    }
-
-    .signal {
+    .btn {
       position: relative;
-      min-height: 350px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, #142c46, #0b1727);
-      overflow: hidden
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 1.8rem;
+      overflow: hidden;
+      border: 0;
+      border-radius: 50px;
+      font: 600 .95rem var(--head);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all .3s
     }
 
-    .signal:before {
+    .btn:before {
       content: "";
       position: absolute;
-      inset: 32px;
-      border: 1px solid rgba(85, 217, 255, .28);
-      border-radius: 50%;
-      box-shadow: 0 0 0 42px rgba(85, 217, 255, .035), 0 0 0 84px rgba(255, 132, 109, .025)
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, #ffffff4d, transparent);
+      pointer-events: none;
+      transition: left .5s
     }
 
-    .signal-title {
+    .btn:hover:before {
+      left: 100%
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-2), var(--cyan));
+      box-shadow: 0 4px 15px #2563eb4d;
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 8px 30px #2563eb66;
+      transform: translateY(-3px)
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--tint-15);
+      background: var(--tint-05);
+      color: var(--blue)
+    }
+
+    .btn-secondary:hover {
+      background: var(--blue);
+      border-color: var(--blue);
+      box-shadow: 0 8px 25px #1d4ed84d;
+      color: #fff;
+      transform: translateY(-3px)
+    }
+
+    [data-theme=dark] .btn-secondary:hover {
+      color: #0a1120
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem
+    }
+
+    .hero-avatar {
       position: relative;
-      z-index: 1;
-      color: var(--blue);
-      font: 500 .68rem "DM Mono", monospace
+      width: 240px;
+      height: 240px;
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan), #7dd3fc);
+      animation: glow 4s ease-in-out infinite
     }
 
-    .signal-photo {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      right: 40px;
-      width: 230px;
-      height: 230px;
-      transform: translateY(-50%);
-      border: 3px solid var(--blue);
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      border: 4px solid var(--bg);
       border-radius: 50%;
       object-fit: cover
     }
 
-    .signal-bars {
-      position: absolute;
-      z-index: 2;
-      left: 24px;
-      bottom: 27px;
+    @keyframes glow {
+
+      0%,
+      to {
+        box-shadow: 0 0 30px var(--tint-15)
+      }
+
+      50% {
+        box-shadow: 0 0 60px var(--tint-15), 0 0 90px var(--cyan-10)
+      }
+    }
+
+    .hero-stats {
       display: flex;
-      align-items: end;
-      gap: 8px;
-      height: 105px
+      gap: 2rem
     }
 
-    .signal-bars i {
-      width: 19px;
-      background: var(--coral)
+    .hero-stat {
+      text-align: center
     }
 
-    .signal-bars i:nth-child(1) {
-      height: 30%
-    }
-
-    .signal-bars i:nth-child(2) {
-      height: 64%;
-      background: var(--yellow)
-    }
-
-    .signal-bars i:nth-child(3) {
-      height: 44%
-    }
-
-    .signal-bars i:nth-child(4) {
-      height: 94%;
-      background: var(--blue)
-    }
-
-    .signal-bars i:nth-child(5) {
-      height: 70%;
-      background: var(--mint)
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line)
-    }
-
-    .metric {
-      min-width: 0;
-      min-height: 125px;
-      padding: 24px;
-      border-right: 1px solid var(--line)
-    }
-
-    .metric:last-child {
-      border: 0
-    }
-
-    .metric b {
-      display: block;
-      font-size: 2.35rem;
-      letter-spacing: -.07em
-    }
-
-    .metric:nth-child(1) b {
-      color: var(--blue)
-    }
-
-    .metric:nth-child(2) b {
-      color: var(--coral)
-    }
-
-    .metric:nth-child(3) b {
-      color: var(--yellow)
-    }
-
-    .metric:nth-child(4) b {
-      color: var(--mint)
-    }
-
-    .metric span {
-      display: block;
-      overflow-wrap: anywhere;
-      color: var(--muted);
-      font: 500 .65rem "DM Mono", monospace
-    }
-
-    section {
-      padding: 86px 0;
-      border-bottom: 1px solid var(--line)
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 30px;
-      margin-bottom: 42px
-    }
-
-    .eyebrow {
-      color: var(--coral);
-      font-size: .68rem
-    }
-
-    .section-head h2 {
-      font-size: 2.15rem;
-      line-height: 1;
-      letter-spacing: -.055em
-    }
-
-    .section-head h2 em {
-      font-family: Fraunces, serif;
-      color: var(--yellow);
-      font-style: normal
-    }
-
-    .timeline {
-      border-top: 1px solid var(--line)
-    }
-
-    .job {
-      display: grid;
-      grid-template-columns: 180px 225px minmax(0, 1fr);
-      gap: 27px;
-      padding: 25px 0;
-      border-bottom: 1px solid var(--line)
-    }
-
-    .period {
-      color: var(--muted);
-      font-size: .67rem
-    }
-
-    .job h3 {
-      font-size: 1rem
-    }
-
-    .job b {
-      display: block;
+    .hero-stat-value {
       color: var(--blue);
-      font-size: .86rem
+      font: 700 1.5rem var(--mono)
     }
 
-    .job p {
-      color: var(--muted);
-      font-size: .91rem
+    .hero-stat-label {
+      color: var(--text-muted);
+      font-size: .72rem;
+      letter-spacing: .05em;
+      text-transform: uppercase
     }
 
-    .cases {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 15px
-    }
-
-    .case {
-      padding: 25px;
-      min-height: 310px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between
-    }
-
-    .case.main {
-      grid-column: span 7;
-      background: linear-gradient(140deg, #173551, #102037)
-    }
-
-    .case.side {
-      grid-column: span 5
-    }
-
-    .case.wide {
-      grid-column: span 8
-    }
-
-    .case.narrow {
-      grid-column: span 4
-    }
-
-    .case.half {
-      grid-column: span 6
-    }
-
-    .case-num {
-      color: var(--coral);
-      font: 500 .67rem "DM Mono", monospace
-    }
-
-    .case h3 {
-      margin-top: 10px;
-      font-size: 1.65rem;
-      letter-spacing: -.05em
-    }
-
-    .case p {
-      margin-top: 11px;
-      color: var(--muted);
-      font-size: .9rem
-    }
-
-    .case-diagram {
+    .hero-orgs {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem;
+      max-width: 440px
+    }
+
+    .org-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 23px;
-      padding: 13px;
-      border: 1px solid #37536e;
-      background: #0a1726;
+      gap: .4rem;
+      padding: .25rem .65rem .25rem .3rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--tint-05);
+      color: var(--text-secondary);
+      font: .74rem var(--mono);
+      transition: all .3s
+    }
+
+    .org-badge:hover {
+      border-color: var(--border-hover);
       color: var(--blue);
-      font: 500 .65rem "DM Mono", monospace
+      transform: translateY(-2px)
     }
 
-    .case-diagram span {
-      padding: 7px;
-      border: 1px solid #37536e
-    }
-
-    .case-diagram b {
-      color: var(--mint)
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 17px
-    }
-
-    .tag {
-      padding: 4px 7px;
-      border: 1px solid #39526b;
-      color: var(--muted);
+    .org-badge b {
+      display: grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #fff;
       font-size: .62rem
     }
 
-    .stack {
+    .hero-scroll {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      color: var(--blue);
+      opacity: .5;
+      animation: bounce 2s infinite
+    }
+
+    @keyframes bounce {
+
+      0%,
+      to {
+        transform: translateX(-50%)
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(-8px)
+      }
+    }
+
+    /* sections */
+    .section {
+      position: relative;
+      padding: 6rem 0
+    }
+
+    .section-alt {
+      background: var(--bg-2)
+    }
+
+    .section-header {
+      max-width: 780px;
+      margin-bottom: 3rem
+    }
+
+    .overline {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: .3rem .8rem;
+      transform: rotate(-1deg);
+      background: var(--ice);
+      box-shadow: 3px 3px 0 var(--blue);
+      color: var(--blue);
+      font: 500 .78rem var(--mono);
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
+
+    [data-theme=dark] .overline {
+      color: #cffafe;
+      box-shadow: 3px 3px 0 var(--blue-2)
+    }
+
+    .section-title {
+      margin-bottom: 1rem;
+      color: var(--blue);
+      font-size: clamp(2rem, 3.5vw, 3.1rem)
+    }
+
+    .section-subtitle {
+      max-width: 620px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.7
+    }
+
+    .stripe {
+      width: 100%;
+      height: 5px;
+      margin-bottom: 3rem;
+      border-radius: 3px;
+      background: var(--stripe)
+    }
+
+    .card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      transition: all .4s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px)
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem
+    }
+
+    .tech span {
+      padding: .15rem .6rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--tint-05);
+      color: var(--tech-color);
+      font: .74rem var(--mono)
+    }
+
+    .arrow-list li {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: .4rem;
+      font-size: .94rem
+    }
+
+    .arrow-list li:before {
+      content: "▹";
+      flex-shrink: 0;
+      color: var(--cyan)
+    }
+
+    /* about */
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line)
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem
     }
 
-    .stack article {
-      padding: 26px;
-      background: var(--bg)
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8
     }
 
-    .stack h3 {
-      font: 500 .68rem "DM Mono", monospace;
-      color: var(--blue)
+    .about-text p {
+      margin-bottom: 1.5rem
     }
 
-    .stack p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: .91rem
+    .about-text strong {
+      color: var(--text-primary);
+      font-weight: 600
     }
 
-    .about {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
-      gap: 70px
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem
     }
 
-    .about>p {
-      font-size: 1.35rem;
-      color: var(--muted)
-    }
-
-    .about strong {
-      color: var(--text)
+    .chips span {
+      padding: .3rem .8rem;
+      border: 1px solid var(--tint-15);
+      border-radius: 6px;
+      background: var(--tint-08);
+      color: var(--blue);
+      font: .84rem var(--mono)
     }
 
     .principles {
       display: grid;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line)
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem
     }
 
-    .principles article {
-      padding: 18px 20px;
-      background: var(--surface)
+    .principle {
+      display: flex;
+      gap: .75rem;
+      padding: .9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card-bg);
+      transition: all .3s
     }
 
-    .principles b {
-      display: block;
-      color: var(--yellow);
-      font: 500 .68rem "DM Mono", monospace
+    .principle:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px)
     }
 
-    .principles span {
-      color: var(--muted);
-      font-size: .88rem
+    .principle svg {
+      margin-top: 2px;
+      color: var(--cyan)
     }
 
-    .contact {
+    .principle h4 {
+      margin-bottom: .15rem;
+      font-size: .9rem;
+      font-weight: 600
+    }
+
+    .principle p {
+      color: var(--text-muted);
+      font-size: .84rem;
+      line-height: 1.5
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .8rem 0
+    }
+
+    .info-item+.info-item {
+      border-top: 1px solid var(--border)
+    }
+
+    .info-item svg {
+      margin-top: 3px;
+      color: var(--cyan)
+    }
+
+    .info-label {
+      margin-bottom: .1rem;
+      color: var(--text-muted);
+      font: .78rem var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .info-value {
+      color: var(--text-primary);
+      font-weight: 500;
+      overflow-wrap: anywhere
+    }
+
+    .info-value a:hover {
+      color: var(--blue)
+    }
+
+    /* timeline */
+    .timeline {
+      position: relative
+    }
+
+    .timeline-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-1px);
+      background: linear-gradient(to bottom, var(--blue), var(--cyan-10))
+    }
+
+    .tl-item {
+      position: relative;
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem
+    }
+
+    .tl-item:nth-child(odd) {
+      flex-direction: row-reverse
+    }
+
+    .tl-spacer,
+    .tl-content {
+      width: 50%
+    }
+
+    .tl-dot {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      z-index: 2;
+      width: 16px;
+      height: 16px;
+      transform: translateX(-50%);
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 0 4px var(--tint-15)
+    }
+
+    .section-alt .tl-dot {
+      border-color: var(--bg-2)
+    }
+
+    .tl-card {
+      padding: 1.75rem
+    }
+
+    .tl-now {
+      display: inline-flex;
+      align-items: center;
+      gap: .375rem;
+      margin-bottom: .75rem;
+      padding: .2rem .7rem;
+      border: 1px solid var(--cyan-25);
+      border-radius: 99px;
+      background: var(--cyan-10);
+      color: var(--cyan);
+      font: 600 .76rem var(--mono)
+    }
+
+    .tl-role {
+      margin-bottom: .2rem;
+      font-size: 1.2rem;
+      font-weight: 700
+    }
+
+    .tl-company {
+      color: var(--blue);
+      font-weight: 500
+    }
+
+    .tl-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: .5rem 0 1rem;
+      color: var(--text-muted);
+      font: .82rem var(--mono)
+    }
+
+    .tl-meta span {
+      display: flex;
+      align-items: center;
+      gap: .3rem
+    }
+
+    .tl-desc {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: .95rem;
+      line-height: 1.7
+    }
+
+    /* skills */
+    .skills-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 30px;
-      align-items: end;
-      padding: 80px 0
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
     }
 
-    .contact h2 {
-      max-width: 700px;
-      font-size: clamp(2.8rem, 6vw, 5.2rem);
-      line-height: .92;
-      letter-spacing: -.07em
+    .skill-title {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      font-weight: 700
     }
 
-    .contact h2 em {
-      font-family: Fraunces, serif;
-      color: var(--coral);
+    .skill-title:before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--cyan)
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem
+    }
+
+    .skill-items span {
+      padding: .45rem .75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--tint-05);
+      color: var(--text-secondary);
+      font-size: .86rem;
+      transition: all .3s
+    }
+
+    .skill-items span:hover {
+      border-color: var(--border-hover);
+      background: var(--tint-08);
+      color: var(--text-primary)
+    }
+
+    /* projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      color: var(--blue)
+    }
+
+    .project-kind {
+      padding: .12rem .55rem;
+      border: 1px solid var(--tint-15);
+      border-radius: 4px;
+      background: var(--tint-08);
+      color: var(--blue);
+      font: 500 .72rem var(--mono)
+    }
+
+    .project-title {
+      margin-bottom: .2rem;
+      font-size: 1.15rem;
+      font-weight: 700
+    }
+
+    .project-period {
+      margin-bottom: .75rem;
+      color: var(--cyan);
+      font: .8rem var(--mono)
+    }
+
+    .project-desc {
+      flex: 1;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: .94rem;
+      line-height: 1.65
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .35rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font: .68rem var(--mono);
+      letter-spacing: .03em
+    }
+
+    .flow span {
+      padding: .2rem .45rem;
+      border: 1px dashed var(--border-hover);
+      border-radius: 4px
+    }
+
+    .flow i {
+      color: var(--cyan);
       font-style: normal
     }
 
-    .contact p {
-      max-width: 570px;
-      margin-top: 19px;
-      color: var(--muted)
+    /* contact */
+    .contact-wrap {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center
     }
 
-    .contact-links {
+    .contact-wrap .section-header {
+      margin: 0 auto 2rem
+    }
+
+    .contact-wrap .section-subtitle {
+      margin: 0 auto
+    }
+
+    .contact-card {
+      padding: 2.5rem
+    }
+
+    .contact-card:hover {
+      transform: none
+    }
+
+    .contact-icon {
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 1rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--blue-2), var(--cyan));
+      color: #fff
+    }
+
+    .contact-text {
+      margin-bottom: 1.5rem;
+      line-height: 1.8
+    }
+
+    .contact-actions {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .75rem;
+      margin-bottom: 1.5rem
     }
 
-    .contact-links a {
-      color: var(--blue);
-      border-bottom: 1px solid var(--blue);
-      font: 500 .68rem "DM Mono", monospace
+    .contact-sub {
+      color: var(--text-muted);
+      font-size: .88rem
     }
 
+    .contact-sub a {
+      color: var(--blue)
+    }
+
+    .contact-sub a:hover {
+      color: var(--cyan)
+    }
+
+    /* footer */
     .footer {
-      padding: 25px 0;
-      color: var(--muted);
-      font: 500 .64rem "DM Mono", monospace
+      position: relative;
+      padding: 3rem 0;
+      background: linear-gradient(135deg, #1e3a8a 0, #1d4ed8 55%, #0891b2 100%);
+      color: #fff
     }
 
-    @media(max-width:760px) {
-      .wrap {
-        width: min(100% - 32px, 1120px)
+    .footer:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #7dd3fc, #22d3ee, #a5f3fc)
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ffffff1f;
+      color: #fff;
+      transition: all .3s
+    }
+
+    .footer-social a:hover {
+      background: #22d3ee;
+      color: #0a1120;
+      transform: translateY(-5px) rotate(15deg)
+    }
+
+    .footer-copy {
+      font-size: .9rem;
+      opacity: .9
+    }
+
+    /* responsive */
+    @media (max-width:1024px) {
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr 1fr
       }
 
-      .nav {
-        height: 70px
+      .navbar-social {
+        display: none
+      }
+    }
+
+    @media (max-width:900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center
       }
 
-      .nav-links a:nth-child(1),
-      .nav-links a:nth-child(3) {
+      .hero-right {
+        order: -1
+      }
+
+      .hero-tagline,
+      .hero-stack {
+        margin-left: auto;
+        margin-right: auto
+      }
+
+      .hero-actions {
+        justify-content: center
+      }
+
+      .hero-avatar {
+        width: 170px;
+        height: 170px
+      }
+
+      .hero-scroll {
         display: none
       }
 
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 64px 0
+      .timeline-line,
+      .tl-dot {
+        left: 1rem
       }
 
-      .hero>div,
-      .section-head>*,
-      .job>*,
-      .case,
-      .metric {
-        min-width: 0
+      .tl-item,
+      .tl-item:nth-child(odd) {
+        flex-direction: row;
+        padding-left: 2.5rem
       }
 
-      .role-label {
-        white-space: normal;
-        font-size: .72rem
+      .tl-spacer {
+        display: none
       }
 
-      .hero h1 {
-        font-size: 2.6rem
+      .tl-content {
+        width: 100%
       }
 
-      .hero-copy {
-        font-size: 1rem
+      .about-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media (max-width:820px) {
+
+      .navbar-links,
+      .navbar-actions {
+        display: none
       }
 
-      .signal {
-        min-height: 215px
-      }
-
-      .signal-photo {
-        right: 24px;
-        width: 150px;
-        height: 150px
-      }
-
-      .metrics {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-      }
-
-      .metric:nth-child(2) {
-        border-right: 0
-      }
-
-      .metric {
-        min-height: 105px;
-        padding: 18px
-      }
-
-      .section-head {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
-        margin-bottom: 28px
-      }
-
-      .section-head h2 {
-        font-size: 1.85rem
-      }
-
-      .job {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 9px
-      }
-
-      .cases {
+      .navbar-toggle {
         display: block
       }
 
-      .case {
-        margin-bottom: 15px;
-        min-height: 265px
+      .navbar {
+        width: 95%
+      }
+    }
+
+    @media (max-width:640px) {
+
+      .skills-grid,
+      .projects-grid,
+      .principles {
+        grid-template-columns: 1fr
       }
 
-      .stack,
-      .about,
-      .contact {
-        grid-template-columns: minmax(0, 1fr)
+      .section {
+        padding: 4.5rem 0
       }
 
-      .stack {
-        gap: 1px
+      .card,
+      .contact-card {
+        padding: 1.5rem
       }
 
-      .contact {
-        align-items: start
+      .hero-stats {
+        gap: 1.25rem
       }
 
-      .contact-links {
-        margin-top: 6px
+      .footer-inner {
+        flex-direction: column;
+        text-align: center
       }
 
-      .nav-cv {
-        display: none
+      .tl-meta {
+        flex-direction: column;
+        gap: .3rem
+      }
+    }
+
+    @media (max-width:480px) {
+      .container {
+        padding: 0 1rem
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch
+      }
+
+      .btn {
+        justify-content: center
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="wrap nav"><a class="brand" href="#top">BRIAN<i>_</i>CLAROS</a>
-    <nav class="nav-links"><a href="#experience">EXPERIENCIA</a><a href="#cases">CASOS</a><a href="#stack">STACK</a><a
-        href="#contact">CONTACTO</a></nav>
-    <div class="nav-actions"><button class="lang-toggle" type="button" data-lang-toggle
-        aria-label="Cambiar idioma">EN</button><a class="nav-cv" href="CV_Brian.pdf" download>CV ↓</a></div>
-  </header>
-  <main id="top" class="wrap">
-    <section class="hero">
-      <div><span class="available"><i></i> DISPONIBLE PARA OPORTUNIDADES</span>
-        <p class="role-label">SENIOR FULL-STACK DEVELOPER · RAG &amp; AI INTEGRATIONS</p>
-        <h1>Python, React<br>y LLMs para<br><em>productos reales.</em></h1>
-        <p class="hero-copy">Ingeniero en Informática con más de 8 años construyendo <strong>productos, integraciones y
-            sistemas de negocio</strong> para banca, SaaS, travel y automatización. Hoy diseño una arquitectura RAG con
-          Python y FastAPI, con un flujo de trabajo AI-first basado en Claude Code y GitHub Copilot.</p>
-        <div class="actions"><a class="button" href="mailto:brianclarosmaldonado@gmail.com">CONTACTARME →</a><a
-            class="button alt" href="#cases">VER CASOS</a></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" />
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 7-10 6L2 7" />
+      </g>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+        <circle cx="12" cy="10" r="3" />
+      </g>
+    </symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <path d="M16 2v4M8 2v4M3 10h18" />
+      </g>
+    </symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+      </g>
+    </symbol>
+    <symbol id="i-code" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="m16 18 6-6-6-6M8 6l-6 6 6 6" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="m8 12 3 3 5-6" />
+      </g>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8" />
+    </symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2Z" />
+    </symbol>
+    <symbol id="i-down" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        d="M12 5v14M5 12l7 7 7-7" />
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main" data-en="Skip to main content">Saltar al contenido principal</a>
+
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="#top" aria-label="Inicio">&lt;BC<span> /</span>&gt;</a>
+      <div class="navbar-right">
+        <nav class="navbar-links" aria-label="Principal">
+          <a href="#about" data-en="About">Sobre mí</a>
+          <a href="#experience" data-en="Experience">Experiencia</a>
+          <a href="#skills" data-en="Skills">Habilidades</a>
+          <a href="#projects" data-en="Projects">Proyectos</a>
+          <a href="#contact" data-en="Contact">Contacto</a>
+        </nav>
+        <div class="navbar-social">
+          <a href="https://github.com/BrianClaros" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg
+              width="18" height="18">
+              <use href="#i-github" />
+            </svg></a>
+          <a href="https://www.linkedin.com/in/brian-alejandro-claros-maldonado/" target="_blank"
+            rel="noopener noreferrer" aria-label="LinkedIn"><svg width="18" height="18">
+              <use href="#i-linkedin" />
+            </svg></a>
+        </div>
+        <div class="navbar-actions">
+          <a class="icon-btn cv" href="CV_Brian.pdf" data-cv download>CV ↓</a>
+          <button class="icon-btn" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
+          <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema">
+            <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+          </button>
+        </div>
+        <button class="navbar-toggle" type="button" aria-label="Menú" aria-expanded="false"
+          aria-controls="mobile-menu" data-menu-toggle>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-      <aside class="signal">
-        <p class="signal-title">PRODUCT / RAG &amp; LLM / 2018—NOW</p>
-        <img class="signal-photo" src="assets/img/brian.webp" width="640" height="640"
-          alt="Foto de Brian Claros" fetchpriority="high">
-        <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-      </aside>
-    </section>
-    <div class="metrics">
-      <div class="metric"><b>+8</b><span>AÑOS DE EXPERIENCIA</span></div>
-      <div class="metric"><b>Miles</b><span>USUARIOS EN SALESQL</span></div>
-      <div class="metric"><b>2</b><span>PLATAFORMAS BANCARIAS</span></div>
-      <div class="metric"><b>RAG</b><span>ARQUITECTURA DESDE CERO</span></div>
     </div>
-    <section id="experience">
-      <div class="section-head"><span class="eyebrow">01 / EXPERIENCIA</span>
-        <h2>Trayectoria en <em>productos con uso real.</em></h2>
-      </div>
-      <div class="timeline">
-        <article class="job"><time class="period">FEB. 2018 — HOY</time>
-          <div>
-            <h3>Socio · Full-Stack Developer</h3><b>Cooperativa de Trabajo Devecoop Ltda.</b>
+  </header>
+  <div class="mobile-menu" id="mobile-menu">
+    <a class="mm-link" href="#about" data-en="About">Sobre mí</a>
+    <a class="mm-link" href="#experience" data-en="Experience">Experiencia</a>
+    <a class="mm-link" href="#skills" data-en="Skills">Habilidades</a>
+    <a class="mm-link" href="#projects" data-en="Projects">Proyectos</a>
+    <a class="mm-link" href="#contact" data-en="Contact">Contacto</a>
+    <div class="mobile-bottom">
+      <a href="https://github.com/BrianClaros" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg
+          width="20" height="20">
+          <use href="#i-github" />
+        </svg></a>
+      <a href="https://www.linkedin.com/in/brian-alejandro-claros-maldonado/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20">
+          <use href="#i-linkedin" />
+        </svg></a>
+      <span class="spacer"></span>
+      <a class="icon-btn cv" href="CV_Brian.pdf" data-cv download>CV ↓</a>
+      <button class="icon-btn" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema">
+        <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        </svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-bg"></div>
+      <div class="hero-grid-pattern"></div>
+      <div class="hero-grid">
+        <div class="hero-left">
+          <span class="hero-badge"><i></i><span data-en="Available for new opportunities">Disponible para nuevas
+              oportunidades</span></span>
+          <h1 class="hero-title">Brian <span class="grad">Claros</span></h1>
+          <p class="hero-subtitle"><b>Senior Full-Stack Developer</b> · RAG &amp; AI Integrations</p>
+          <p class="hero-tagline"
+            data-en="Computer Engineer with 8+ years building products, integrations, and business systems for banking, SaaS, travel, and automation. Today I'm designing a RAG architecture with Python and FastAPI.">
+            Ingeniero en Informática con más de 8 años construyendo productos, integraciones y sistemas de negocio para
+            banca, SaaS, travel y automatización. Hoy diseño una arquitectura RAG con Python y FastAPI.</p>
+          <p class="hero-stack">Python <b>·</b> Django <b>·</b> FastAPI <b>·</b> React <b>·</b> Vue.js <b>·</b>
+            TypeScript <b>·</b> PostgreSQL <b>·</b> RAG <b>·</b> LLMs</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#experience"><span data-en="View experience">Ver experiencia</span> <svg
+                width="18" height="18">
+                <use href="#i-down" />
+              </svg></a>
+            <a class="btn btn-secondary" href="#projects"><svg width="18" height="18">
+                <use href="#i-folder" />
+              </svg> <span data-en="Projects">Proyectos</span></a>
           </div>
-          <p>Socio de la cooperativa y desarrollador full-stack en proyectos para banca, SaaS, travel, automatización
-            administrativa, extensiones de Chrome y chatbots. Análisis técnico, APIs REST, integraciones, testing,
-            revisión de código y mantenimiento evolutivo de aplicaciones en producción.</p>
-        </article>
-        <article class="job"><time class="period">SEP. 2026 — HOY</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>Plataforma conversacional RAG · Devecoop</b>
-          </div>
-          <p>Arquitectura RAG construida desde cero e integrada con una interfaz conversacional: backend con FastAPI,
-            búsqueda vectorial, embeddings, estrategia de recuperación de contexto e integración de LLMs.</p>
-        </article>
-        <article class="job"><time class="period">ABR. — SEP. 2026</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>Plataforma bancaria de licitaciones y compras · Devecoop</b>
-          </div>
-          <p>Digitalización y control centralizado de licitaciones y compras internas de un banco: solicitudes,
-            proveedores, presupuestos, aprobaciones multinivel, roles, permisos y auditoría completa de cada proceso.</p>
-        </article>
-        <article class="job"><time class="period">MAR. 2026</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>Bot de WhatsApp · Devecoop</b>
-          </div>
-          <p>Plataforma conversacional con WhatsApp Business API: gestión de participantes, flujos por estados,
-            registros, sorteos y validaciones, procesamiento asíncrono con Celery y Redis, y persistencia en PostgreSQL.
-          </p>
-        </article>
-        <article class="job"><time class="period">OCT. 2025 — FEB. 2026</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>Plataforma bancaria de scoring · Devecoop</b>
-          </div>
-          <p>Módulo interno de scoring y gestión de riesgos para evaluación de clientes: gestión de clientes,
-            regularización, autenticación, permisos por perfiles, trazabilidad, pruebas unitarias y end-to-end.</p>
-        </article>
-        <article class="job"><time class="period">MAY. 2020 — OCT. 2025</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>SalesQL · Devecoop</b>
-          </div>
-          <p>Extensión de Chrome y plataforma SaaS usada por miles de usuarios: funcionalidades full-stack, Stripe con
-            suscripciones y webhooks, migración del frontend, optimización de performance y debugging productivo.</p>
-        </article>
-        <article class="job"><time class="period">MAY. — SEP. 2020</time>
-          <div>
-            <h3>Mobile Developer</h3><b>Deportify</b>
-          </div>
-          <p>Aplicación Android para reservas de canchas de fútbol, tenis y pádel: interfaces, flujos de reserva,
-            navegación mobile y validación funcional con React Native.</p>
-        </article>
-        <article class="job"><time class="period">NOV. 2019 — MAY. 2020</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>FreePreTrip · Devecoop</b>
-          </div>
-          <p>PWA para digitalizar inspecciones previas al viaje de autobuses escolares: interfaces responsive con React,
-            funcionalidades backend, integración con la base de datos y testing.</p>
-        </article>
-        <article class="job"><time class="period">AGO. — NOV. 2019</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>CoopApp · Devecoop</b>
-          </div>
-          <p>Aplicación para simplificar y automatizar procesos administrativos de cooperativas, trabajando sobre
-            pantallas, flujos de usuario, backend, base de datos y pruebas.</p>
-        </article>
-        <article class="job"><time class="period">FEB. 2018 — AGO. 2019</time>
-          <div>
-            <h3>Full-Stack Developer</h3><b>Betterez · Devecoop</b>
-          </div>
-          <p>Plataforma internacional de reserva y emisión de boletos de autobús con Node.js, Vue.js, MongoDB y AWS:
-            nuevas funcionalidades, pruebas, refactoring de código legacy y migraciones de datos.</p>
-        </article>
-        <article class="job"><time class="period">FEB. — DIC. 2016</time>
-          <div>
-            <h3>Prácticas Profesionales</h3><b>Secretaría de Asuntos Docentes</b>
-          </div>
-          <p>Nuevas funcionalidades y panel de administración para un sistema de preguntas frecuentes con AngularJS,
-            PHP y PostgreSQL. Quilmes, Avellaneda y Berazategui.</p>
-        </article>
-      </div>
-    </section>
-    <section id="cases">
-      <div class="section-head"><span class="eyebrow">02 / CASOS</span>
-        <h2>La evidencia está en <em>lo construido.</em></h2>
-      </div>
-      <div class="cases">
-        <article class="case main">
-          <div><span class="case-num">01 / IA · 2026—HOY</span>
-            <h3>Plataforma conversacional RAG</h3>
-            <p>Arquitectura de Retrieval-Augmented Generation creada desde cero e integrada con una interfaz
-              conversacional. Contribuí a la arquitectura inicial, el backend con FastAPI, la estrategia de recuperación
-              de datos, el almacenamiento vectorial y la integración de LLMs.</p>
-            <div class="case-diagram"><span>DOCUMENTOS</span><b>→</b><span>EMBEDDINGS</span><b>→</b><span>BÚSQUEDA
-                VECTORIAL</span><b>→</b><span>LLM</span></div>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span
-              class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">Vector Search</span><span
-              class="tag">LLM</span></div>
-        </article>
-        <article class="case side">
-          <div><span class="case-num">02 / BANCA · 2026</span>
-            <h3>Licitaciones y compras</h3>
-            <p>Sistema para digitalizar y controlar las licitaciones y compras internas de un banco: solicitudes,
-              proveedores, presupuestos y aprobaciones multinivel, con roles, permisos avanzados y auditoría del
-              historial completo.</p>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Django REST Framework</span><span
-              class="tag">PostgreSQL</span><span class="tag">Unit &amp; E2E Testing</span></div>
-        </article>
-        <article class="case wide">
-          <div><span class="case-num">03 / SAAS · 2020—2025</span>
-            <h3>SalesQL Extension</h3>
-            <p>Extensión de Chrome y plataforma SaaS para búsqueda y extracción de correos desde LinkedIn, utilizada
-              por miles de usuarios. Funcionalidades full-stack, Stripe con suscripciones, webhooks y conciliación,
-              migración del frontend, debugging productivo y optimización de rendimiento.</p>
-            <div class="case-diagram"><span>EXTENSIÓN</span><b>→</b><span>DJANGO</span><b>→</b><span>STRIPE</span></div>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span
-              class="tag">Vue.js</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span><span
-              class="tag">Docker</span><span class="tag">Stripe</span></div>
-        </article>
-        <article class="case narrow">
-          <div><span class="case-num">04 / BANCA · 2025—2026</span>
-            <h3>Scoring y riesgo</h3>
-            <p>Módulo interno de scoring y gestión de riesgos para evaluación de clientes: lógica de negocio, vistas
-              responsive, permisos por perfiles, trazabilidad y pruebas end-to-end.</p>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span
-              class="tag">HTMX</span><span class="tag">PostgreSQL</span></div>
-        </article>
-        <article class="case half">
-          <div><span class="case-num">05 / AUTOMATIZACIÓN · 2026</span>
-            <h3>Bot de WhatsApp</h3>
-            <p>Plataforma conversacional integrada con WhatsApp Business API. Implementé gestión de participantes,
-              flujos por estados, registros, sorteos, validaciones, procesamiento asíncrono y contexto conversacional en
-              cache.</p>
-            <div class="case-diagram"><span>WHATSAPP API</span><b>→</b><span>CELERY /
-                REDIS</span><b>→</b><span>POSTGRESQL</span></div>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span
-              class="tag">Celery</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span></div>
-        </article>
-        <article class="case half">
-          <div><span class="case-num">06 / IA · PROYECTO PROPIO</span>
-            <h3>AI Marketing Content Generator</h3>
-            <p>Generación automatizada de contenido con OpenAI API: prompts ajustados a reglas de negocio, validación
-              estructurada con Pydantic, fallbacks ante respuestas inválidas, metadata para trazabilidad y tests.</p>
-            <div class="case-diagram"><span>PROMPT</span><b>→</b><span>OPENAI API</span><b>→</b><span>PYDANTIC</span>
+        </div>
+        <div class="hero-right">
+          <div class="hero-avatar"><img src="assets/img/brian.webp" width="640" height="640" alt="Foto de Brian Claros"
+              data-en-alt="Photo of Brian Claros" fetchpriority="high"></div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-value">+8</div>
+              <div class="hero-stat-label" data-en="Years exp.">Años exp.</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">10+</div>
+              <div class="hero-stat-label" data-en="Projects">Proyectos</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">1000s</div>
+              <div class="hero-stat-label" data-en="SalesQL users">Usuarios SalesQL</div>
             </div>
           </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">OpenAI API</span><span
-              class="tag">Pydantic</span><span class="tag">Pillow</span><span class="tag">Prompt Engineering</span>
+          <div class="hero-orgs">
+            <span class="org-badge"><b>D</b>Devecoop</span>
+            <span class="org-badge"><b>S</b>SalesQL</span>
+            <span class="org-badge"><b>B</b>Betterez</span>
+            <span class="org-badge"><b>D</b>Deportify</span>
+            <span class="org-badge"><b>U</b>UNAJ</span>
           </div>
-        </article>
+        </div>
       </div>
+      <a class="hero-scroll" href="#about" aria-label="Bajar"><svg width="24" height="24">
+          <use href="#i-down" />
+        </svg></a>
     </section>
-    <section id="stack">
-      <div class="section-head"><span class="eyebrow">03 / STACK</span>
-        <h2>Herramientas para <em>entregar y mantener.</em></h2>
-      </div>
-      <div class="stack">
-        <article>
-          <h3>BACKEND &amp; APIS</h3>
-          <p>Python · Django · Django REST Framework · FastAPI · Node.js · Express.js · Celery · Stripe · WhatsApp
-            Business API</p>
-        </article>
-        <article>
-          <h3>FRONTEND &amp; MOBILE</h3>
-          <p>React.js · Vue.js · React Native · TypeScript · JavaScript · HTMX · Tailwind · Bootstrap</p>
-        </article>
-        <article>
-          <h3>IA &amp; LLM</h3>
-          <p>RAG · Búsqueda vectorial · Embeddings · OpenAI API · Prompt Engineering · Structured outputs · Pydantic</p>
-        </article>
-        <article>
-          <h3>AI-ASSISTED DEVELOPMENT</h3>
-          <p>Claude Code · GitHub Copilot · OpenCode · OpenAI Codex · Gemini</p>
-        </article>
-        <article>
-          <h3>BASES DE DATOS</h3>
-          <p>PostgreSQL · MongoDB · MySQL · Redis</p>
-        </article>
-        <article>
-          <h3>INFRA &amp; CALIDAD</h3>
-          <p>Docker · AWS · Linux · Nginx · Gunicorn · Git · Unit, Integration &amp; E2E Testing</p>
-        </article>
-      </div>
-    </section>
-    <section>
-      <div class="section-head"><span class="eyebrow">04 / ENFOQUE</span>
-        <h2>El software tiene que seguir siendo <em>útil mañana.</em></h2>
-      </div>
-      <div class="about">
-        <p>Combino análisis, desarrollo y pruebas para convertir necesidades de negocio en funcionalidades concretas.
-          Priorizo <strong>claridad, mantenimiento y una experiencia que acompañe el trabajo real.</strong> Trabajo con
-          un enfoque AI-first: uso IA a diario para desarrollar, testear y revisar, aplicando criterio técnico para
-          validar cada solución antes de incorporarla al producto.</p>
-        <div class="principles">
-          <article><b>CÓDIGO MANTENIBLE</b><span>Decisiones pensadas para la evolución del producto.</span></article>
-          <article><b>RENDIMIENTO PRAGMÁTICO</b><span>Atención a consultas, flujos y estabilidad.</span></article>
-          <article><b>AI-FIRST CON CRITERIO</b><span>Claude Code y GitHub Copilot en el día a día, con revisión y
-              validación manual del código generado.</span></article>
-          <article><b>IA EN EL PRODUCTO</b><span>RAG, embeddings y LLMs integrados con validación estructurada y manejo
-              de errores.</span></article>
-          <article><b>FORMACIÓN</b><span>Ingeniero en Informática · UNAJ, 2025. Técnico en Programación · EEST N.º 4,
-              2016.</span></article>
-          <article><b>IDIOMAS</b><span>Español nativo · Inglés intermedio (B1).</span></article>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="overline" data-en="About me">Sobre mí</span>
+          <h2 class="section-title" data-en="Software that stays <span class='grad'>useful tomorrow</span>">Software que
+            sigue siendo <span class="grad">útil mañana</span></h2>
+        </div>
+        <div class="stripe"></div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p
+              data-en="I combine analysis, development, and testing to turn business needs into concrete functionality. I prioritize <strong>clarity, maintainability, and an experience that supports real work</strong>.">
+              Combino análisis, desarrollo y pruebas para convertir necesidades de negocio en funcionalidades concretas.
+              Priorizo <strong>claridad, mantenimiento y una experiencia que acompañe el trabajo real</strong>.</p>
+            <p
+              data-en="I work <strong>AI-first</strong>: I use Claude Code and GitHub Copilot daily to build, test, and review, applying technical judgment to validate every solution before it reaches the product.">
+              Trabajo con un enfoque <strong>AI-first</strong>: uso Claude Code y GitHub Copilot a diario para
+              desarrollar, testear y revisar, aplicando criterio técnico para validar cada solución antes de
+              incorporarla al producto.</p>
+            <div class="chips"><span data-en="Spanish · Native">Español · Nativo</span><span
+                data-en="English · Intermediate (B1)">Inglés · Intermedio (B1)</span></div>
+            <div class="principles">
+              <div class="principle"><svg width="18" height="18">
+                  <use href="#i-code" />
+                </svg>
+                <div>
+                  <h4 data-en="Maintainable code">Código mantenible</h4>
+                  <p data-en="Decisions designed for product evolution.">Decisiones pensadas para la evolución del
+                    producto.</p>
+                </div>
+              </div>
+              <div class="principle"><svg width="18" height="18">
+                  <use href="#i-check" />
+                </svg>
+                <div>
+                  <h4 data-en="Pragmatic performance">Rendimiento pragmático</h4>
+                  <p data-en="Attention to queries, workflows, and stability.">Atención a consultas, flujos y
+                    estabilidad.</p>
+                </div>
+              </div>
+              <div class="principle"><svg width="18" height="18">
+                  <use href="#i-spark" />
+                </svg>
+                <div>
+                  <h4 data-en="AI-first with judgment">AI-first con criterio</h4>
+                  <p data-en="Manual review and validation of every piece of generated code.">Revisión y validación
+                    manual del código generado.</p>
+                </div>
+              </div>
+              <div class="principle"><svg width="18" height="18">
+                  <use href="#i-spark" />
+                </svg>
+                <div>
+                  <h4 data-en="AI in the product">IA en el producto</h4>
+                  <p data-en="RAG, embeddings, and LLMs with structured validation and error handling.">RAG,
+                    embeddings y LLMs con validación estructurada y manejo de errores.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="card reveal">
+            <div class="info-item"><svg width="18" height="18">
+                <use href="#i-pin" />
+              </svg>
+              <div>
+                <div class="info-label" data-en="Location">Ubicación</div>
+                <div class="info-value">Buenos Aires, Argentina</div>
+              </div>
+            </div>
+            <div class="info-item"><svg width="18" height="18">
+                <use href="#i-mail" />
+              </svg>
+              <div>
+                <div class="info-label">Email</div>
+                <div class="info-value"><a
+                    href="mailto:brianclarosmaldonado@gmail.com">brianclarosmaldonado@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="info-item"><svg width="18" height="18">
+                <use href="#i-code" />
+              </svg>
+              <div>
+                <div class="info-label" data-en="Role">Rol</div>
+                <div class="info-value">Senior Full-Stack · AI</div>
+              </div>
+            </div>
+            <div class="info-item"><svg width="18" height="18">
+                <use href="#i-cap" />
+              </svg>
+              <div>
+                <div class="info-label" data-en="Education">Formación</div>
+                <div class="info-value" data-en="Computer Engineer · UNAJ (2025)">Ingeniero en Informática · UNAJ
+                  (2025)</div>
+              </div>
+            </div>
+            <div class="info-item"><svg width="18" height="18">
+                <use href="#i-cap" />
+              </svg>
+              <div>
+                <div class="info-label" data-en="Technical degree">Técnico</div>
+                <div class="info-value" data-en="Programming Technician · EEST No. 4 (2016)">Técnico en Programación ·
+                  EEST N.º 4 (2016)</div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
-    <section id="contact">
-      <div class="contact">
-        <div><span class="eyebrow">05 / CONTACTO</span>
-          <h2>¿Construimos el próximo <em>sistema?</em></h2>
-          <p>Estoy abierto a roles de AI Product Engineer, Full-Stack AI, Solutions Engineer y Senior Software Engineer,
-            especialmente en equipos que valoren ownership, integraciones, automatización y productos escalables.</p>
+
+    <!-- EXPERIENCE -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="overline" data-en="Experience">Experiencia</span>
+          <h2 class="section-title" data-en="Products with <span class='grad'>real users</span>">Productos con <span
+              class="grad">uso real</span></h2>
+          <p class="section-subtitle"
+            data-en="Since 2018 at Devecoop, a worker cooperative, building software for banking, SaaS, travel, and automation.">
+            Desde 2018 en Devecoop, cooperativa de trabajo, construyendo software para banca, SaaS, travel y
+            automatización.</p>
         </div>
-        <div class="contact-links"><a href="mailto:brianclarosmaldonado@gmail.com">EMAIL ↗</a><a target="_blank"
-            rel="noopener noreferrer" href="https://www.linkedin.com/in/brian-alejandro-claros-maldonado/">LINKEDIN
-            ↗</a><a target="_blank" rel="noopener noreferrer" href="https://github.com/BrianClaros">GITHUB ↗</a></div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <span class="tl-now"><span data-en="Current">Actual</span></span>
+                <h3 class="tl-role" data-en="Partner · Full-Stack Developer">Socio · Full-Stack Developer</h3>
+                <div class="tl-company" data-en="Devecoop (worker cooperative)">Cooperativa de Trabajo Devecoop Ltda.
+                </div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Feb 2018 — Now">Feb. 2018 — Hoy</span></span><span><svg width="14"
+                      height="14">
+                      <use href="#i-pin" />
+                    </svg>Buenos Aires</span></div>
+                <p class="tl-desc"
+                  data-en="Cooperative partner and full-stack developer on projects for banking, SaaS, travel, administrative automation, Chrome extensions, and chatbots.">
+                  Socio de la cooperativa y desarrollador full-stack en proyectos para banca, SaaS, travel,
+                  automatización administrativa, extensiones de Chrome y chatbots.</p>
+                <ul class="arrow-list" style="margin-bottom:1rem">
+                  <li data-en="Technical analysis, REST APIs, and integrations">Análisis técnico, APIs REST e
+                    integraciones</li>
+                  <li data-en="Testing, code review, and ongoing maintenance in production">Testing, revisión de código
+                    y mantenimiento evolutivo en producción</li>
+                </ul>
+                <div class="tech"><span>Python</span><span>Django</span><span>FastAPI</span><span>React</span><span>Vue.js</span><span>PostgreSQL</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <span class="tl-now"><span data-en="Current">Actual</span></span>
+                <h3 class="tl-role">Full-Stack Developer</h3>
+                <div class="tl-company" data-en="RAG conversational platform · Devecoop">Plataforma conversacional RAG
+                  · Devecoop</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Sep 2026 — Now">Sep. 2026 — Hoy</span></span></div>
+                <p class="tl-desc"
+                  data-en="RAG architecture built from scratch and integrated with a conversational interface: FastAPI backend, vector search, embeddings, context-retrieval strategy, and LLM integration.">
+                  Arquitectura RAG construida desde cero e integrada con una interfaz conversacional: backend con
+                  FastAPI, búsqueda vectorial, embeddings, estrategia de recuperación de contexto e integración de
+                  LLMs.</p>
+                <div class="tech"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Embeddings</span><span>LLM</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role">Full-Stack Developer</h3>
+                <div class="tl-company" data-en="Banking procurement &amp; tenders platform · Devecoop">Plataforma
+                  bancaria de licitaciones y compras · Devecoop</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Apr — Sep 2026">Abr. — Sep. 2026</span></span></div>
+                <p class="tl-desc"
+                  data-en="Digitization and centralized control of a bank's internal tenders and purchasing: requests, suppliers, budgets, multi-level approvals, roles, permissions, and a full audit trail.">
+                  Digitalización y control centralizado de licitaciones y compras internas de un banco: solicitudes,
+                  proveedores, presupuestos, aprobaciones multinivel, roles, permisos y auditoría completa.</p>
+                <div class="tech"><span>Python</span><span>Django REST Framework</span><span>PostgreSQL</span><span>E2E Testing</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role">Full-Stack Developer</h3>
+                <div class="tl-company" data-en="WhatsApp Bot · Devecoop">Bot de WhatsApp · Devecoop</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Mar 2026">Mar. 2026</span></span></div>
+                <p class="tl-desc"
+                  data-en="Conversational platform on the WhatsApp Business API: participant management, state-based flows, registrations, draws, and validations, with async processing via Celery and Redis.">
+                  Plataforma conversacional con WhatsApp Business API: gestión de participantes, flujos por estados,
+                  registros, sorteos y validaciones, con procesamiento asíncrono vía Celery y Redis.</p>
+                <div class="tech"><span>Python</span><span>Django</span><span>Celery</span><span>Redis</span><span>PostgreSQL</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role">Full-Stack Developer</h3>
+                <div class="tl-company" data-en="Banking scoring platform · Devecoop">Plataforma bancaria de scoring ·
+                  Devecoop</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Oct 2025 — Feb 2026">Oct. 2025 — Feb. 2026</span></span></div>
+                <p class="tl-desc"
+                  data-en="Internal scoring and risk-management module for customer evaluation: authentication, role-based permissions, traceability, unit and end-to-end tests.">
+                  Módulo interno de scoring y gestión de riesgos para evaluación de clientes: autenticación, permisos
+                  por perfiles, trazabilidad, pruebas unitarias y end-to-end.</p>
+                <div class="tech"><span>Python</span><span>Django</span><span>HTMX</span><span>PostgreSQL</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role">Full-Stack Developer</h3>
+                <div class="tl-company">SalesQL · Devecoop</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="May 2020 — Oct 2025">May. 2020 — Oct. 2025</span></span></div>
+                <p class="tl-desc"
+                  data-en="Chrome extension and SaaS platform used by thousands of users: full-stack features, Stripe subscriptions and webhooks, frontend migration, performance optimization, and production debugging.">
+                  Extensión de Chrome y plataforma SaaS usada por miles de usuarios: funcionalidades full-stack, Stripe
+                  con suscripciones y webhooks, migración del frontend, optimización de performance y debugging
+                  productivo.</p>
+                <div class="tech"><span>Python</span><span>Django</span><span>Vue.js</span><span>JavaScript</span><span>Docker</span><span>Stripe</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role">Mobile Developer</h3>
+                <div class="tl-company">Deportify</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="May — Sep 2020">May. — Sep. 2020</span></span></div>
+                <p class="tl-desc"
+                  data-en="Android app for football, tennis, and padel court bookings: interfaces, booking flows, and mobile navigation.">
+                  Aplicación Android para reservas de canchas de fútbol, tenis y pádel: interfaces, flujos de reserva y
+                  navegación mobile.</p>
+                <div class="tech"><span>React Native</span><span>JavaScript</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role">Full-Stack Developer</h3>
+                <div class="tl-company" data-en="FreePreTrip · CoopApp · Devecoop">FreePreTrip · CoopApp · Devecoop
+                </div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Aug 2019 — May 2020">Ago. 2019 — May. 2020</span></span></div>
+                <p class="tl-desc"
+                  data-en="PWA to digitize school-bus pre-trip inspections, and an app to automate cooperative administrative processes: interfaces, backend, database, and testing.">
+                  PWA para digitalizar inspecciones previas al viaje de autobuses escolares, y una aplicación para
+                  automatizar procesos administrativos de cooperativas: interfaces, backend, base de datos y pruebas.
+                </p>
+                <div class="tech"><span>React</span><span>PWA</span><span>Node.js</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role">Full-Stack Developer</h3>
+                <div class="tl-company">Betterez · Devecoop</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Feb 2018 — Aug 2019">Feb. 2018 — Ago. 2019</span></span></div>
+                <p class="tl-desc"
+                  data-en="International bus booking and ticketing platform: new features, testing, legacy-code refactoring, and data migrations.">
+                  Plataforma internacional de reserva y emisión de boletos de autobús: nuevas funcionalidades, pruebas,
+                  refactoring de código legacy y migraciones de datos.</p>
+                <div class="tech"><span>Node.js</span><span>Vue.js</span><span>MongoDB</span><span>AWS</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-spacer"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <article class="card tl-card">
+                <h3 class="tl-role" data-en="Software Development Internship">Prácticas Profesionales</h3>
+                <div class="tl-company">Secretaría de Asuntos Docentes</div>
+                <div class="tl-meta"><span><svg width="14" height="14">
+                      <use href="#i-cal" />
+                    </svg><span data-en="Feb — Dec 2016">Feb. — Dic. 2016</span></span><span><svg width="14"
+                      height="14">
+                      <use href="#i-pin" />
+                    </svg>Quilmes</span></div>
+                <p class="tl-desc"
+                  data-en="New features and an admin panel for a FAQ system.">Nuevas funcionalidades y panel de
+                  administración para un sistema de preguntas frecuentes.</p>
+                <div class="tech"><span>AngularJS</span><span>PHP</span><span>PostgreSQL</span></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="overline" data-en="Skills">Habilidades</span>
+          <h2 class="section-title" data-en="Tools to <span class='grad'>ship and maintain</span>">Herramientas para
+            <span class="grad">entregar y mantener</span></h2>
+        </div>
+        <div class="stripe"></div>
+        <div class="skills-grid">
+          <article class="card reveal">
+            <h3 class="skill-title">Backend &amp; APIs</h3>
+            <div class="skill-items"><span>Python</span><span>Django</span><span>Django REST
+                Framework</span><span>FastAPI</span><span>Node.js</span><span>Express.js</span><span>Celery</span><span>Stripe</span><span>WhatsApp
+                Business API</span></div>
+          </article>
+          <article class="card reveal">
+            <h3 class="skill-title">Frontend &amp; Mobile</h3>
+            <div class="skill-items"><span>React.js</span><span>Vue.js</span><span>React
+                Native</span><span>TypeScript</span><span>JavaScript</span><span>HTMX</span><span>Tailwind</span><span>Bootstrap</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3 class="skill-title" data-en="AI &amp; LLM">IA &amp; LLM</h3>
+            <div class="skill-items"><span>RAG</span><span data-en="Vector search">Búsqueda
+                vectorial</span><span>Embeddings</span><span>OpenAI API</span><span>Prompt Engineering</span><span>Structured
+                outputs</span><span>Pydantic</span></div>
+          </article>
+          <article class="card reveal">
+            <h3 class="skill-title">AI-Assisted Development</h3>
+            <div class="skill-items"><span>Claude Code</span><span>GitHub
+                Copilot</span><span>OpenCode</span><span>OpenAI Codex</span><span>Gemini</span></div>
+          </article>
+          <article class="card reveal">
+            <h3 class="skill-title" data-en="Databases">Bases de datos</h3>
+            <div class="skill-items"><span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span><span>Redis</span></div>
+          </article>
+          <article class="card reveal">
+            <h3 class="skill-title" data-en="Infra &amp; quality">Infra &amp; calidad</h3>
+            <div class="skill-items"><span>Docker</span><span>AWS</span><span>Linux</span><span>Nginx</span><span>Gunicorn</span><span>Git</span><span>Unit
+                / E2E Testing</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="overline" data-en="Projects">Proyectos</span>
+          <h2 class="section-title" data-en="Featured <span class='grad'>projects</span>">Proyectos <span
+              class="grad">destacados</span></h2>
+          <p class="section-subtitle" data-en="The evidence lives in what was built.">La evidencia está en lo
+            construido.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="card project-card reveal">
+            <div class="project-top"><svg width="28" height="28">
+                <use href="#i-folder" />
+              </svg><span class="project-kind" data-en="AI">IA</span></div>
+            <h3 class="project-title" data-en="RAG conversational platform">Plataforma conversacional RAG</h3>
+            <div class="project-period" data-en="2026 — now">2026 — hoy</div>
+            <p class="project-desc"
+              data-en="Retrieval-Augmented Generation architecture built from scratch: initial architecture, FastAPI backend, data-retrieval strategy, vector storage, and LLM integration.">
+              Arquitectura Retrieval-Augmented Generation creada desde cero: arquitectura inicial, backend con FastAPI,
+              estrategia de recuperación, almacenamiento vectorial e integración de LLMs.</p>
+            <div class="flow"><span data-en="DOCS">DOCS</span><i>→</i><span>EMBEDDINGS</span><i>→</i><span
+                data-en="VECTOR SEARCH">BÚSQUEDA</span><i>→</i><span>LLM</span></div>
+            <div class="tech"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Vector Search</span></div>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-top"><svg width="28" height="28">
+                <use href="#i-folder" />
+              </svg><span class="project-kind">SaaS</span></div>
+            <h3 class="project-title">SalesQL Extension</h3>
+            <div class="project-period">2020 — 2025</div>
+            <p class="project-desc"
+              data-en="Chrome extension and SaaS platform for finding emails from LinkedIn, used by thousands of users. Stripe subscriptions, webhooks, frontend migration, and performance.">
+              Extensión de Chrome y plataforma SaaS para búsqueda de correos desde LinkedIn, usada por miles de usuarios.
+              Stripe, webhooks, migración del frontend y performance.</p>
+            <div class="flow"><span data-en="EXTENSION">EXTENSIÓN</span><i>→</i><span>DJANGO</span><i>→</i><span>STRIPE</span></div>
+            <div class="tech"><span>Django</span><span>Vue.js</span><span>PostgreSQL</span><span>Stripe</span></div>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-top"><svg width="28" height="28">
+                <use href="#i-folder" />
+              </svg><span class="project-kind" data-en="Banking">Banca</span></div>
+            <h3 class="project-title" data-en="Procurement &amp; tenders">Licitaciones y compras</h3>
+            <div class="project-period">2026</div>
+            <p class="project-desc"
+              data-en="System to digitize a bank's internal tenders and purchasing: requests, suppliers, budgets, multi-level approvals, advanced permissions, and full audit history.">
+              Sistema para digitalizar licitaciones y compras internas de un banco: solicitudes, proveedores,
+              presupuestos, aprobaciones multinivel, permisos avanzados y auditoría.</p>
+            <div class="tech"><span>Python</span><span>DRF</span><span>PostgreSQL</span><span>E2E</span></div>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-top"><svg width="28" height="28">
+                <use href="#i-folder" />
+              </svg><span class="project-kind" data-en="Banking">Banca</span></div>
+            <h3 class="project-title" data-en="Scoring &amp; risk">Scoring y riesgo</h3>
+            <div class="project-period">2025 — 2026</div>
+            <p class="project-desc"
+              data-en="Internal scoring and risk-management module for customer evaluation: business logic, responsive views, role-based permissions, and end-to-end tests.">
+              Módulo interno de scoring y gestión de riesgos: lógica de negocio, vistas responsive, permisos por
+              perfiles y pruebas end-to-end.</p>
+            <div class="tech"><span>Django</span><span>HTMX</span><span>PostgreSQL</span></div>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-top"><svg width="28" height="28">
+                <use href="#i-folder" />
+              </svg><span class="project-kind" data-en="Automation">Automatización</span></div>
+            <h3 class="project-title" data-en="WhatsApp Bot">Bot de WhatsApp</h3>
+            <div class="project-period">2026</div>
+            <p class="project-desc"
+              data-en="Conversational platform on the WhatsApp Business API with state-based flows, draws, validations, async processing, and cached conversation context.">
+              Plataforma conversacional con WhatsApp Business API: flujos por estados, sorteos, validaciones,
+              procesamiento asíncrono y contexto en cache.</p>
+            <div class="flow"><span>WHATSAPP</span><i>→</i><span>CELERY / REDIS</span><i>→</i><span>POSTGRES</span></div>
+            <div class="tech"><span>Django</span><span>Celery</span><span>Redis</span></div>
+          </article>
+          <article class="card project-card reveal">
+            <div class="project-top"><svg width="28" height="28">
+                <use href="#i-folder" />
+              </svg><span class="project-kind" data-en="Side project">Proyecto propio</span></div>
+            <h3 class="project-title">AI Marketing Content Generator</h3>
+            <div class="project-period">IA · OpenAI</div>
+            <p class="project-desc"
+              data-en="Automated content generation with the OpenAI API: business-rule prompts, structured validation with Pydantic, fallbacks, traceability metadata, and tests.">
+              Generación automatizada de contenido con OpenAI API: prompts con reglas de negocio, validación
+              estructurada con Pydantic, fallbacks, metadata y tests.</p>
+            <div class="flow"><span>PROMPT</span><i>→</i><span>OPENAI</span><i>→</i><span>PYDANTIC</span></div>
+            <div class="tech"><span>Python</span><span>OpenAI API</span><span>Pydantic</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="section-header reveal">
+            <span class="overline" data-en="Contact">Contacto</span>
+            <h2 class="section-title" data-en="Let's build the <span class='grad'>next system</span>">¿Construimos el
+              <span class="grad">próximo sistema?</span></h2>
+          </div>
+          <div class="card contact-card reveal">
+            <div class="contact-icon"><svg width="26" height="26">
+                <use href="#i-mail" />
+              </svg></div>
+            <p class="contact-text"
+              data-en="I'm open to AI Product Engineer, Full-Stack AI, Solutions Engineer, and Senior Software Engineer roles, especially in teams that value ownership, integrations, automation, and scalable products.">
+              Estoy abierto a roles de AI Product Engineer, Full-Stack AI, Solutions Engineer y Senior Software
+              Engineer, especialmente en equipos que valoren ownership, integraciones, automatización y productos
+              escalables.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:brianclarosmaldonado@gmail.com"><svg width="18" height="18">
+                  <use href="#i-mail" />
+                </svg> <span data-en="Send email">Enviar email</span></a>
+              <a class="btn btn-secondary" href="CV_Brian.pdf" data-cv download><span data-en="Download CV">Descargar
+                  CV</span> <svg width="18" height="18">
+                  <use href="#i-down" />
+                </svg></a>
+            </div>
+            <p class="contact-sub"><span data-en="Also on">También en</span> <a
+                href="https://www.linkedin.com/in/brian-alejandro-claros-maldonado/" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/BrianClaros" target="_blank"
+                rel="noopener noreferrer">GitHub</a></p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="wrap footer">© 2026 BRIAN ALEJANDRO CLAROS MALDONADO · INGENIERO EN INFORMÁTICA</footer>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="https://github.com/BrianClaros" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg
+            width="20" height="20">
+            <use href="#i-github" />
+          </svg></a>
+        <a href="https://www.linkedin.com/in/brian-alejandro-claros-maldonado/" target="_blank"
+          rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20">
+            <use href="#i-linkedin" />
+          </svg></a>
+        <a href="mailto:brianclarosmaldonado@gmail.com" aria-label="Email"><svg width="20" height="20">
+            <use href="#i-mail" />
+          </svg></a>
+      </div>
+      <p class="footer-copy">© 2026 Brian Alejandro Claros Maldonado · <span
+          data-en="Computer Engineer">Ingeniero en Informática</span></p>
+    </div>
+  </footer>
+
   <script>
     (() => {
-      const translations = {
-        'EXPERIENCIA': 'EXPERIENCE', 'CASOS': 'CASES', 'CONTACTO': 'CONTACT',
-        'DISPONIBLE PARA OPORTUNIDADES': 'AVAILABLE FOR OPPORTUNITIES',
-        'y LLMs para': 'and LLMs for',
-        'productos reales.': 'real products.',
-        'Ingeniero en Informática con más de 8 años construyendo': 'Computer Engineer with 8+ years building',
-        'productos, integraciones y sistemas de negocio': 'products, integrations, and business systems',
-        'para banca, SaaS, travel y automatización. Hoy diseño una arquitectura RAG con Python y FastAPI, con un flujo de trabajo AI-first basado en Claude Code y GitHub Copilot.': 'for banking, SaaS, travel, and automation. Today I am designing a RAG architecture with Python and FastAPI, using an AI-first workflow built on Claude Code and GitHub Copilot.',
-        'CONTACTARME →': 'CONTACT ME →', 'VER CASOS': 'VIEW CASES',
-        'AÑOS DE EXPERIENCIA': 'YEARS OF EXPERIENCE', 'Miles': 'Thousands', 'USUARIOS EN SALESQL': 'SALESQL USERS', 'PLATAFORMAS BANCARIAS': 'BANKING PLATFORMS', 'ARQUITECTURA DESDE CERO': 'ARCHITECTURE BUILT FROM SCRATCH',
-        '01 / EXPERIENCIA': '01 / EXPERIENCE', 'Trayectoria en': 'Experience across', 'productos con uso real.': 'products with real users.',
-        'FEB. 2018 — HOY': 'FEB 2018 — NOW', 'Socio · Full-Stack Developer': 'Partner · Full-Stack Developer', 'Cooperativa de Trabajo Devecoop Ltda.': 'Devecoop (worker cooperative)',
-        'Socio de la cooperativa y desarrollador full-stack en proyectos para banca, SaaS, travel, automatización administrativa, extensiones de Chrome y chatbots. Análisis técnico, APIs REST, integraciones, testing, revisión de código y mantenimiento evolutivo de aplicaciones en producción.': 'Cooperative partner and full-stack developer on projects for banking, SaaS, travel, administrative automation, Chrome extensions, and chatbots. Technical analysis, REST APIs, integrations, testing, code review, and ongoing maintenance of production applications.',
-        'SEP. 2026 — HOY': 'SEP 2026 — NOW', 'Plataforma conversacional RAG · Devecoop': 'RAG conversational platform · Devecoop',
-        'Arquitectura RAG construida desde cero e integrada con una interfaz conversacional: backend con FastAPI, búsqueda vectorial, embeddings, estrategia de recuperación de contexto e integración de LLMs.': 'RAG architecture built from scratch and integrated with a conversational interface: FastAPI backend, vector search, embeddings, context-retrieval strategy, and LLM integration.',
-        'ABR. — SEP. 2026': 'APR — SEP 2026', 'Plataforma bancaria de licitaciones y compras · Devecoop': 'Banking procurement & tenders platform · Devecoop',
-        'Digitalización y control centralizado de licitaciones y compras internas de un banco: solicitudes, proveedores, presupuestos, aprobaciones multinivel, roles, permisos y auditoría completa de cada proceso.': 'Digitization and centralized control of a bank\'s internal tenders and purchasing: requests, suppliers, budgets, multi-level approvals, roles, permissions, and a full audit trail for every process.',
-        'MAR. 2026': 'MAR 2026', 'Bot de WhatsApp · Devecoop': 'WhatsApp Bot · Devecoop',
-        'Plataforma conversacional con WhatsApp Business API: gestión de participantes, flujos por estados, registros, sorteos y validaciones, procesamiento asíncrono con Celery y Redis, y persistencia en PostgreSQL.': 'Conversational platform on the WhatsApp Business API: participant management, state-based flows, registrations, draws, and validations, asynchronous processing with Celery and Redis, and PostgreSQL persistence.',
-        'OCT. 2025 — FEB. 2026': 'OCT 2025 — FEB 2026', 'Plataforma bancaria de scoring · Devecoop': 'Banking scoring platform · Devecoop',
-        'Módulo interno de scoring y gestión de riesgos para evaluación de clientes: gestión de clientes, regularización, autenticación, permisos por perfiles, trazabilidad, pruebas unitarias y end-to-end.': 'Internal scoring and risk-management module for customer evaluation: customer management, regularization, authentication, role-based permissions, traceability, unit and end-to-end tests.',
-        'MAY. 2020 — OCT. 2025': 'MAY 2020 — OCT 2025',
-        'Extensión de Chrome y plataforma SaaS usada por miles de usuarios: funcionalidades full-stack, Stripe con suscripciones y webhooks, migración del frontend, optimización de performance y debugging productivo.': 'Chrome extension and SaaS platform used by thousands of users: full-stack features, Stripe subscriptions and webhooks, frontend migration, performance optimization, and production debugging.',
-        'MAY. — SEP. 2020': 'MAY — SEP 2020',
-        'Aplicación Android para reservas de canchas de fútbol, tenis y pádel: interfaces, flujos de reserva, navegación mobile y validación funcional con React Native.': 'Android app for football, tennis, and padel court bookings: interfaces, booking flows, mobile navigation, and functional validation with React Native.',
-        'NOV. 2019 — MAY. 2020': 'NOV 2019 — MAY 2020',
-        'PWA para digitalizar inspecciones previas al viaje de autobuses escolares: interfaces responsive con React, funcionalidades backend, integración con la base de datos y testing.': 'PWA to digitize school-bus pre-trip inspections: responsive React interfaces, backend features, database integration, and testing.',
-        'AGO. — NOV. 2019': 'AUG — NOV 2019',
-        'Aplicación para simplificar y automatizar procesos administrativos de cooperativas, trabajando sobre pantallas, flujos de usuario, backend, base de datos y pruebas.': 'Application to simplify and automate cooperative administrative processes, covering screens, user flows, backend, database, and testing.',
-        'FEB. 2018 — AGO. 2019': 'FEB 2018 — AUG 2019',
-        'Plataforma internacional de reserva y emisión de boletos de autobús con Node.js, Vue.js, MongoDB y AWS: nuevas funcionalidades, pruebas, refactoring de código legacy y migraciones de datos.': 'International bus booking and ticketing platform with Node.js, Vue.js, MongoDB, and AWS: new features, testing, legacy-code refactoring, and data migrations.',
-        'FEB. — DIC. 2016': 'FEB — DEC 2016', 'Prácticas Profesionales': 'Software Development Internship',
-        'Nuevas funcionalidades y panel de administración para un sistema de preguntas frecuentes con AngularJS, PHP y PostgreSQL. Quilmes, Avellaneda y Berazategui.': 'New features and an admin panel for a FAQ system built with AngularJS, PHP, and PostgreSQL. Quilmes, Avellaneda, and Berazategui.',
-        '02 / CASOS': '02 / CASE STUDIES', 'La evidencia está en': 'Evidence lives in', 'lo construido.': 'what was built.',
-        '01 / IA · 2026—HOY': '01 / AI · 2026—NOW', 'Plataforma conversacional RAG': 'RAG conversational platform',
-        'Arquitectura de Retrieval-Augmented Generation creada desde cero e integrada con una interfaz conversacional. Contribuí a la arquitectura inicial, el backend con FastAPI, la estrategia de recuperación de datos, el almacenamiento vectorial y la integración de LLMs.': 'Retrieval-Augmented Generation architecture built from scratch and integrated with a conversational interface. I contributed to the initial architecture, the FastAPI backend, the data-retrieval strategy, vector storage, and LLM integration.',
-        'DOCUMENTOS': 'DOCUMENTS', 'BÚSQUEDA VECTORIAL': 'VECTOR SEARCH',
-        '02 / BANCA · 2026': '02 / BANKING · 2026', 'Licitaciones y compras': 'Procurement & tenders',
-        'Sistema para digitalizar y controlar las licitaciones y compras internas de un banco: solicitudes, proveedores, presupuestos y aprobaciones multinivel, con roles, permisos avanzados y auditoría del historial completo.': 'System to digitize and control a bank\'s internal tenders and purchasing: requests, suppliers, budgets, and multi-level approvals, with roles, advanced permissions, and a full audit history.',
-        '03 / SAAS · 2020—2025': '03 / SAAS · 2020—2025',
-        'Extensión de Chrome y plataforma SaaS para búsqueda y extracción de correos desde LinkedIn, utilizada por miles de usuarios. Funcionalidades full-stack, Stripe con suscripciones, webhooks y conciliación, migración del frontend, debugging productivo y optimización de rendimiento.': 'Chrome extension and SaaS platform for finding and extracting emails from LinkedIn, used by thousands of users. Full-stack features, Stripe subscriptions, webhooks, and reconciliation, frontend migration, production debugging, and performance optimization.',
-        'EXTENSIÓN': 'EXTENSION',
-        '04 / BANCA · 2025—2026': '04 / BANKING · 2025—2026', 'Scoring y riesgo': 'Scoring & risk',
-        'Módulo interno de scoring y gestión de riesgos para evaluación de clientes: lógica de negocio, vistas responsive, permisos por perfiles, trazabilidad y pruebas end-to-end.': 'Internal scoring and risk-management module for customer evaluation: business logic, responsive views, role-based permissions, traceability, and end-to-end tests.',
-        '05 / AUTOMATIZACIÓN · 2026': '05 / AUTOMATION · 2026', 'Bot de WhatsApp': 'WhatsApp Bot',
-        'Plataforma conversacional integrada con WhatsApp Business API. Implementé gestión de participantes, flujos por estados, registros, sorteos, validaciones, procesamiento asíncrono y contexto conversacional en cache.': 'Conversational platform integrated with the WhatsApp Business API. I implemented participant management, state-based flows, registrations, draws, validations, asynchronous processing, and cached conversation context.',
-        '06 / IA · PROYECTO PROPIO': '06 / AI · SIDE PROJECT',
-        'Generación automatizada de contenido con OpenAI API: prompts ajustados a reglas de negocio, validación estructurada con Pydantic, fallbacks ante respuestas inválidas, metadata para trazabilidad y tests.': 'Automated content generation with the OpenAI API: prompts tuned to business rules, structured validation with Pydantic, fallbacks for invalid responses, traceability metadata, and tests.',
-        'Herramientas para': 'Tools to', 'entregar y mantener.': 'ship and maintain.', 'IA & LLM': 'AI & LLM', 'BASES DE DATOS': 'DATABASES', 'INFRA & CALIDAD': 'INFRA & QUALITY',
-        'RAG · Búsqueda vectorial · Embeddings · OpenAI API · Prompt Engineering · Structured outputs · Pydantic': 'RAG · Vector search · Embeddings · OpenAI API · Prompt Engineering · Structured outputs · Pydantic',
-        '04 / ENFOQUE': '04 / FOCUS', 'El software tiene que seguir siendo': 'Software should stay', 'útil mañana.': 'useful tomorrow.',
-        'Combino análisis, desarrollo y pruebas para convertir necesidades de negocio en funcionalidades concretas. Priorizo': 'I combine analysis, development, and testing to turn business needs into concrete functionality. I prioritize',
-        'claridad, mantenimiento y una experiencia que acompañe el trabajo real.': 'clarity, maintainability, and an experience that supports real work.',
-        'Trabajo con un enfoque AI-first: uso IA a diario para desarrollar, testear y revisar, aplicando criterio técnico para validar cada solución antes de incorporarla al producto.': 'I work AI-first: I use AI daily to build, test, and review, applying technical judgment to validate every solution before it reaches the product.',
-        'CÓDIGO MANTENIBLE': 'MAINTAINABLE CODE', 'Decisiones pensadas para la evolución del producto.': 'Decisions designed for product evolution.', 'RENDIMIENTO PRAGMÁTICO': 'PRAGMATIC PERFORMANCE', 'Atención a consultas, flujos y estabilidad.': 'Attention to queries, workflows, and stability.',
-        'AI-FIRST CON CRITERIO': 'AI-FIRST WITH JUDGMENT', 'Claude Code y GitHub Copilot en el día a día, con revisión y validación manual del código generado.': 'Claude Code and GitHub Copilot every day, with manual review and validation of generated code.',
-        'IA EN EL PRODUCTO': 'AI IN THE PRODUCT', 'RAG, embeddings y LLMs integrados con validación estructurada y manejo de errores.': 'RAG, embeddings, and LLMs integrated with structured validation and error handling.',
-        'FORMACIÓN': 'EDUCATION', 'Ingeniero en Informática · UNAJ, 2025. Técnico en Programación · EEST N.º 4, 2016.': 'Computer Engineer · UNAJ, 2025. Programming Technician · EEST No. 4, 2016.',
-        'IDIOMAS': 'LANGUAGES', 'Español nativo · Inglés intermedio (B1).': 'Spanish (native) · English (intermediate, B1).',
-        '05 / CONTACTO': '05 / CONTACT', '¿Construimos el próximo': 'Should we build the next', 'sistema?': 'system?',
-        'Estoy abierto a roles de AI Product Engineer, Full-Stack AI, Solutions Engineer y Senior Software Engineer, especialmente en equipos que valoren ownership, integraciones, automatización y productos escalables.': 'I am open to AI Product Engineer, Full-Stack AI, Solutions Engineer, and Senior Software Engineer roles, especially in teams that value ownership, integrations, automation, and scalable products.',
-        '© 2026 BRIAN ALEJANDRO CLAROS MALDONADO · INGENIERO EN INFORMÁTICA': '© 2026 BRIAN ALEJANDRO CLAROS MALDONADO · COMPUTER ENGINEER'
+      const $$ = (s) => document.querySelectorAll(s);
+      const store = {
+        get: (k) => { try { return localStorage.getItem(k) } catch (e) { return null } },
+        set: (k, v) => { try { localStorage.setItem(k, v) } catch (e) { } }
       };
-      const button = document.querySelector('[data-lang-toggle]');
-      const cvLink = document.querySelector('.nav-cv');
-      let language = 'es';
-      const translate = (lang) => {
-        document.querySelectorAll('body *').forEach((element) => {
-          [...element.childNodes].filter((node) => node.nodeType === Node.TEXT_NODE).forEach((node) => {
-            const source = node.datasetSource || node.nodeValue;
-            if (!node.datasetSource) node.datasetSource = source;
-            const key = source.replace(/\s+/g, ' ').trim();
-            if (lang === 'en' && translations[key]) node.nodeValue = source.match(/^\s*/)[0] + translations[key] + source.match(/\s*$/)[0];
-            if (lang === 'es') node.nodeValue = source;
-          });
+
+      // Theme
+      const root = document.documentElement;
+      $$('[data-theme-toggle]').forEach((b) => b.addEventListener('click', () => {
+        const dark = root.dataset.theme !== 'dark';
+        if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
+        store.set('theme', dark ? 'dark' : 'light');
+      }));
+
+      // Language
+      const els = [...$$('[data-en]')];
+      els.forEach((el) => { el.dataset.es = el.innerHTML; });
+      const imgs = [...$$('[data-en-alt]')];
+      imgs.forEach((el) => { el.dataset.esAlt = el.alt; });
+      const setLang = (lang) => {
+        const en = lang === 'en';
+        els.forEach((el) => { el.innerHTML = en ? el.dataset.en : el.dataset.es; });
+        imgs.forEach((el) => { el.alt = en ? el.dataset.enAlt : el.dataset.esAlt; });
+        root.lang = lang;
+        $$('[data-cv]').forEach((a) => { a.href = en ? 'CV_Brian_en.pdf' : 'CV_Brian.pdf'; });
+        $$('[data-lang-toggle]').forEach((b) => {
+          b.textContent = en ? 'ES' : 'EN';
+          b.setAttribute('aria-label', en ? 'Cambiar a español' : 'Switch to English');
         });
-        document.documentElement.lang = lang;
-        cvLink.href = lang === 'en' ? 'CV_Brian_en.pdf' : 'CV_Brian.pdf';
-        button.textContent = lang === 'es' ? 'EN' : 'ES';
-        button.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
-        document.title = 'Brian Claros | Senior Full Stack Developer · AI';
+        store.set('lang', lang);
       };
-      button.addEventListener('click', () => { language = language === 'es' ? 'en' : 'es'; translate(language); });
+      let lang = store.get('lang') === 'en' ? 'en' : 'es';
+      if (lang === 'en') setLang('en');
+      $$('[data-lang-toggle]').forEach((b) => b.addEventListener('click', () => {
+        lang = lang === 'es' ? 'en' : 'es';
+        setLang(lang);
+      }));
+
+      // Navbar on scroll
+      const nav = document.getElementById('navbar');
+      const onScroll = () => nav.classList.toggle('scrolled', scrollY > 40);
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Mobile menu
+      const menu = document.getElementById('mobile-menu');
+      const toggle = document.querySelector('[data-menu-toggle]');
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+      menu.querySelectorAll('a.mm-link').forEach((a) => a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }));
+
+      // Active section + reveal
+      if ('IntersectionObserver' in window) {
+        const links = [...$$('.navbar-links a, .mobile-menu a.mm-link')];
+        const spy = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            links.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        $$('main section[id]').forEach((s) => spy.observe(s));
+
+        const rev = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); rev.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        $$('.reveal').forEach((el) => rev.observe(el));
+      } else {
+        $$('.reveal').forEach((el) => el.classList.add('in'));
+      }
     })();
   </script>
 </body>
