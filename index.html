@@ -741,42 +741,27 @@
       text-transform: uppercase
     }
 
-    .hero-orgs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: .5rem;
-      max-width: 440px
-    }
-
-    .org-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      padding: .25rem .65rem .25rem .3rem;
+    .hero-industries {
+      padding: .3rem .9rem;
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 99px;
       background: var(--tint-05);
       color: var(--text-secondary);
-      font: .74rem var(--mono);
-      transition: all .3s
+      font: .78rem var(--mono)
     }
 
-    .org-badge:hover {
-      border-color: var(--border-hover);
-      color: var(--blue);
-      transform: translateY(-2px)
+    .hero-seeking {
+      max-width: 580px;
+      margin: -.75rem 0 2rem;
+      padding-left: .8rem;
+      border-left: 3px solid var(--cyan);
+      color: var(--text-muted);
+      font-size: .92rem
     }
 
-    .org-badge b {
-      display: grid;
-      place-items: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      color: #fff;
-      font-size: .62rem
+    .hero-seeking b {
+      color: var(--text-primary);
+      font-weight: 600
     }
 
     .hero-scroll {
@@ -933,45 +918,6 @@
       font: .84rem var(--mono)
     }
 
-    .principles {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 2rem
-    }
-
-    .principle {
-      display: flex;
-      gap: .75rem;
-      padding: .9rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--card-bg);
-      transition: all .3s
-    }
-
-    .principle:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px)
-    }
-
-    .principle svg {
-      margin-top: 2px;
-      color: var(--cyan)
-    }
-
-    .principle h4 {
-      margin-bottom: .15rem;
-      font-size: .9rem;
-      font-weight: 600
-    }
-
-    .principle p {
-      color: var(--text-muted);
-      font-size: .84rem;
-      line-height: 1.5
-    }
-
     .info-item {
       display: flex;
       align-items: flex-start;
@@ -1105,6 +1051,37 @@
       line-height: 1.7
     }
 
+    .tl-clients {
+      margin-bottom: 1.25rem;
+      border-top: 1px solid var(--border)
+    }
+
+    .tl-clients li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .92rem
+    }
+
+    .tl-clients b {
+      color: var(--text-primary);
+      font-weight: 500
+    }
+
+    .tl-clients b:before {
+      content: "▹ ";
+      color: var(--cyan)
+    }
+
+    .tl-clients span {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      font: .78rem var(--mono);
+      white-space: nowrap
+    }
+
     /* skills */
     .skills-grid {
       display: grid;
@@ -1221,6 +1198,35 @@
     .flow i {
       color: var(--cyan);
       font-style: normal
+    }
+
+    .project-foot {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: 1rem;
+      padding-top: .9rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font: .76rem var(--mono)
+    }
+
+    a.project-foot {
+      color: var(--blue);
+      font-weight: 500;
+      transition: color .3s
+    }
+
+    a.project-foot:hover {
+      color: var(--cyan)
+    }
+
+    a.project-foot:hover svg {
+      transform: translateX(3px)
+    }
+
+    a.project-foot svg {
+      transition: transform .3s
     }
 
     /* contact */
@@ -1366,6 +1372,13 @@
         margin-right: auto
       }
 
+      .hero-seeking {
+        margin: -.75rem auto 2rem;
+        padding: .6rem 0 0;
+        border-left: 0;
+        border-top: 2px solid var(--cyan-25)
+      }
+
       .hero-actions {
         justify-content: center
       }
@@ -1422,8 +1435,7 @@
     @media (max-width:640px) {
 
       .skills-grid,
-      .projects-grid,
-      .principles {
+      .projects-grid {
         grid-template-columns: 1fr
       }
 
@@ -1615,8 +1627,8 @@
       <div class="hero-grid-pattern"></div>
       <div class="hero-grid">
         <div class="hero-left">
-          <span class="hero-badge"><i></i><span data-en="Available for new opportunities">Disponible para nuevas
-              oportunidades</span></span>
+          <span class="hero-badge"><i></i><span data-en="Open to remote or hybrid roles · Buenos Aires (GMT-3)">Disponible
+              para roles remotos o híbridos · Buenos Aires (GMT-3)</span></span>
           <h1 class="hero-title">Brian <span class="grad">Claros</span></h1>
           <p class="hero-subtitle"><b>Senior Full-Stack Developer</b> · RAG &amp; AI Integrations</p>
           <p class="hero-tagline"
@@ -1625,14 +1637,16 @@
             banca, SaaS, travel y automatización. Hoy diseño una arquitectura RAG con Python y FastAPI.</p>
           <p class="hero-stack">Python <b>·</b> Django <b>·</b> FastAPI <b>·</b> React <b>·</b> Vue.js <b>·</b>
             TypeScript <b>·</b> PostgreSQL <b>·</b> RAG <b>·</b> LLMs</p>
+          <p class="hero-seeking"><span data-en="Looking for:">Busco roles de:</span> <b>AI Product Engineer</b> ·
+            <b>Full-Stack AI</b> · <b>Solutions Engineer</b> · <b>Senior Software Engineer</b></p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#experience"><span data-en="View experience">Ver experiencia</span> <svg
-                width="18" height="18">
+            <a class="btn btn-primary" href="CV_Brian.pdf" data-cv download><span data-en="Download CV">Descargar
+                CV</span> <svg width="18" height="18">
                 <use href="#i-down" />
               </svg></a>
-            <a class="btn btn-secondary" href="#projects"><svg width="18" height="18">
-                <use href="#i-folder" />
-              </svg> <span data-en="Projects">Proyectos</span></a>
+            <a class="btn btn-secondary" href="mailto:brianclarosmaldonado@gmail.com"><svg width="18" height="18">
+                <use href="#i-mail" />
+              </svg> <span data-en="Contact me">Contactarme</span></a>
           </div>
         </div>
         <div class="hero-right">
@@ -1644,21 +1658,16 @@
               <div class="hero-stat-label" data-en="Years exp.">Años exp.</div>
             </div>
             <div class="hero-stat">
-              <div class="hero-stat-value">10+</div>
-              <div class="hero-stat-label" data-en="Projects">Proyectos</div>
+              <div class="hero-stat-value">4</div>
+              <div class="hero-stat-label" data-en="Industries">Industrias</div>
             </div>
             <div class="hero-stat">
-              <div class="hero-stat-value">1000s</div>
-              <div class="hero-stat-label" data-en="SalesQL users">Usuarios SalesQL</div>
+              <div class="hero-stat-value">2</div>
+              <div class="hero-stat-label" data-en="Banking platforms">Plataformas bancarias</div>
             </div>
           </div>
-          <div class="hero-orgs">
-            <span class="org-badge"><b>D</b>Devecoop</span>
-            <span class="org-badge"><b>S</b>SalesQL</span>
-            <span class="org-badge"><b>B</b>Betterez</span>
-            <span class="org-badge"><b>D</b>Deportify</span>
-            <span class="org-badge"><b>U</b>UNAJ</span>
-          </div>
+          <p class="hero-industries" data-en="Banking · SaaS · Travel · Automation">Banca · SaaS · Travel ·
+            Automatización</p>
         </div>
       </div>
       <a class="hero-scroll" href="#about" aria-label="Bajar"><svg width="24" height="24">
@@ -1687,45 +1696,8 @@
               desarrollar, testear y revisar, aplicando criterio técnico para validar cada solución antes de
               incorporarla al producto.</p>
             <div class="chips"><span data-en="Spanish · Native">Español · Nativo</span><span
-                data-en="English · Intermediate (B1)">Inglés · Intermedio (B1)</span></div>
-            <div class="principles">
-              <div class="principle"><svg width="18" height="18">
-                  <use href="#i-code" />
-                </svg>
-                <div>
-                  <h4 data-en="Maintainable code">Código mantenible</h4>
-                  <p data-en="Decisions designed for product evolution.">Decisiones pensadas para la evolución del
-                    producto.</p>
-                </div>
-              </div>
-              <div class="principle"><svg width="18" height="18">
-                  <use href="#i-check" />
-                </svg>
-                <div>
-                  <h4 data-en="Pragmatic performance">Rendimiento pragmático</h4>
-                  <p data-en="Attention to queries, workflows, and stability.">Atención a consultas, flujos y
-                    estabilidad.</p>
-                </div>
-              </div>
-              <div class="principle"><svg width="18" height="18">
-                  <use href="#i-spark" />
-                </svg>
-                <div>
-                  <h4 data-en="AI-first with judgment">AI-first con criterio</h4>
-                  <p data-en="Manual review and validation of every piece of generated code.">Revisión y validación
-                    manual del código generado.</p>
-                </div>
-              </div>
-              <div class="principle"><svg width="18" height="18">
-                  <use href="#i-spark" />
-                </svg>
-                <div>
-                  <h4 data-en="AI in the product">IA en el producto</h4>
-                  <p data-en="RAG, embeddings, and LLMs with structured validation and error handling.">RAG,
-                    embeddings y LLMs con validación estructurada y manejo de errores.</p>
-                </div>
-              </div>
-            </div>
+                data-en="English · B1 · worked in English with a Canadian client">Inglés · B1 · trabajo en inglés con
+                cliente canadiense</span></div>
           </div>
           <aside class="card reveal">
             <div class="info-item"><svg width="18" height="18">
@@ -1784,9 +1756,8 @@
           <h2 class="section-title" data-en="Products with <span class='grad'>real users</span>">Productos con <span
               class="grad">uso real</span></h2>
           <p class="section-subtitle"
-            data-en="Since 2018 at Devecoop, a worker cooperative, building software for banking, SaaS, travel, and automation.">
-            Desde 2018 en Devecoop, cooperativa de trabajo, construyendo software para banca, SaaS, travel y
-            automatización.</p>
+            data-en="8+ years at a software cooperative, working for clients across industries.">
+            Más de 8 años en una cooperativa de software, trabajando para clientes de distintas industrias.</p>
         </div>
         <div class="timeline">
           <div class="timeline-line"></div>
@@ -1796,10 +1767,10 @@
             <div class="tl-dot"></div>
             <div class="tl-content">
               <article class="card tl-card">
-                <span class="tl-now"><span data-en="Current">Actual</span></span>
+                <span class="tl-now"><span data-en="Current · 8+ years">Actual · +8 años</span></span>
                 <h3 class="tl-role" data-en="Partner · Full-Stack Developer">Socio · Full-Stack Developer</h3>
-                <div class="tl-company" data-en="Devecoop (worker cooperative)">Cooperativa de Trabajo Devecoop Ltda.
-                </div>
+                <div class="tl-company" data-en="Devecoop (software worker cooperative)">Cooperativa de Trabajo Devecoop
+                  Ltda.</div>
                 <div class="tl-meta"><span><svg width="14" height="14">
                       <use href="#i-cal" />
                     </svg><span data-en="Feb 2018 — Now">Feb. 2018 — Hoy</span></span><span><svg width="14"
@@ -1807,117 +1778,19 @@
                       <use href="#i-pin" />
                     </svg>Buenos Aires</span></div>
                 <p class="tl-desc"
-                  data-en="Cooperative partner and full-stack developer on projects for banking, SaaS, travel, administrative automation, Chrome extensions, and chatbots.">
-                  Socio de la cooperativa y desarrollador full-stack en proyectos para banca, SaaS, travel,
-                  automatización administrativa, extensiones de Chrome y chatbots.</p>
-                <ul class="arrow-list" style="margin-bottom:1rem">
-                  <li data-en="Technical analysis, REST APIs, and integrations">Análisis técnico, APIs REST e
-                    integraciones</li>
-                  <li data-en="Testing, code review, and ongoing maintenance in production">Testing, revisión de código
-                    y mantenimiento evolutivo en producción</li>
+                  data-en="Software cooperative building products for clients in banking, SaaS, travel, and automation. As a partner I work end to end: technical analysis, REST APIs, integrations, testing, code review, and production maintenance.">
+                  Cooperativa de software que desarrolla productos para clientes de banca, SaaS, travel y
+                  automatización. Como socio trabajo de punta a punta: análisis técnico, APIs REST, integraciones,
+                  testing, revisión de código y mantenimiento en producción.</p>
+                <ul class="tl-clients">
+                  <li><b data-en="RAG conversational platform">Plataforma conversacional RAG</b><span data-en="2026 — now">2026 — hoy</span></li>
+                  <li><b data-en="Banking: procurement &amp; scoring">Banca: licitaciones y scoring</b><span>2025 — 2026</span></li>
+                  <li><b data-en="WhatsApp Bot">Bot de WhatsApp</b><span>2026</span></li>
+                  <li><b data-en="SalesQL · Chrome extension + SaaS">SalesQL · extensión Chrome + SaaS</b><span>2020 — 2025</span></li>
+                  <li><b>FreePreTrip · CoopApp</b><span>2019 — 2020</span></li>
+                  <li><b data-en="Betterez · Canadian client, work in English">Betterez · cliente canadiense, trabajo en inglés</b><span>2018 — 2019</span></li>
                 </ul>
-                <div class="tech"><span>Python</span><span>Django</span><span>FastAPI</span><span>React</span><span>Vue.js</span><span>PostgreSQL</span></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-spacer"></div>
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <article class="card tl-card">
-                <span class="tl-now"><span data-en="Current">Actual</span></span>
-                <h3 class="tl-role">Full-Stack Developer</h3>
-                <div class="tl-company" data-en="RAG conversational platform · Devecoop">Plataforma conversacional RAG
-                  · Devecoop</div>
-                <div class="tl-meta"><span><svg width="14" height="14">
-                      <use href="#i-cal" />
-                    </svg><span data-en="Sep 2026 — Now">Sep. 2026 — Hoy</span></span></div>
-                <p class="tl-desc"
-                  data-en="RAG architecture built from scratch and integrated with a conversational interface: FastAPI backend, vector search, embeddings, context-retrieval strategy, and LLM integration.">
-                  Arquitectura RAG construida desde cero e integrada con una interfaz conversacional: backend con
-                  FastAPI, búsqueda vectorial, embeddings, estrategia de recuperación de contexto e integración de
-                  LLMs.</p>
-                <div class="tech"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Embeddings</span><span>LLM</span></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-spacer"></div>
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <article class="card tl-card">
-                <h3 class="tl-role">Full-Stack Developer</h3>
-                <div class="tl-company" data-en="Banking procurement &amp; tenders platform · Devecoop">Plataforma
-                  bancaria de licitaciones y compras · Devecoop</div>
-                <div class="tl-meta"><span><svg width="14" height="14">
-                      <use href="#i-cal" />
-                    </svg><span data-en="Apr — Sep 2026">Abr. — Sep. 2026</span></span></div>
-                <p class="tl-desc"
-                  data-en="Digitization and centralized control of a bank's internal tenders and purchasing: requests, suppliers, budgets, multi-level approvals, roles, permissions, and a full audit trail.">
-                  Digitalización y control centralizado de licitaciones y compras internas de un banco: solicitudes,
-                  proveedores, presupuestos, aprobaciones multinivel, roles, permisos y auditoría completa.</p>
-                <div class="tech"><span>Python</span><span>Django REST Framework</span><span>PostgreSQL</span><span>E2E Testing</span></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-spacer"></div>
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <article class="card tl-card">
-                <h3 class="tl-role">Full-Stack Developer</h3>
-                <div class="tl-company" data-en="WhatsApp Bot · Devecoop">Bot de WhatsApp · Devecoop</div>
-                <div class="tl-meta"><span><svg width="14" height="14">
-                      <use href="#i-cal" />
-                    </svg><span data-en="Mar 2026">Mar. 2026</span></span></div>
-                <p class="tl-desc"
-                  data-en="Conversational platform on the WhatsApp Business API: participant management, state-based flows, registrations, draws, and validations, with async processing via Celery and Redis.">
-                  Plataforma conversacional con WhatsApp Business API: gestión de participantes, flujos por estados,
-                  registros, sorteos y validaciones, con procesamiento asíncrono vía Celery y Redis.</p>
-                <div class="tech"><span>Python</span><span>Django</span><span>Celery</span><span>Redis</span><span>PostgreSQL</span></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-spacer"></div>
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <article class="card tl-card">
-                <h3 class="tl-role">Full-Stack Developer</h3>
-                <div class="tl-company" data-en="Banking scoring platform · Devecoop">Plataforma bancaria de scoring ·
-                  Devecoop</div>
-                <div class="tl-meta"><span><svg width="14" height="14">
-                      <use href="#i-cal" />
-                    </svg><span data-en="Oct 2025 — Feb 2026">Oct. 2025 — Feb. 2026</span></span></div>
-                <p class="tl-desc"
-                  data-en="Internal scoring and risk-management module for customer evaluation: authentication, role-based permissions, traceability, unit and end-to-end tests.">
-                  Módulo interno de scoring y gestión de riesgos para evaluación de clientes: autenticación, permisos
-                  por perfiles, trazabilidad, pruebas unitarias y end-to-end.</p>
-                <div class="tech"><span>Python</span><span>Django</span><span>HTMX</span><span>PostgreSQL</span></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-spacer"></div>
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <article class="card tl-card">
-                <h3 class="tl-role">Full-Stack Developer</h3>
-                <div class="tl-company">SalesQL · Devecoop</div>
-                <div class="tl-meta"><span><svg width="14" height="14">
-                      <use href="#i-cal" />
-                    </svg><span data-en="May 2020 — Oct 2025">May. 2020 — Oct. 2025</span></span></div>
-                <p class="tl-desc"
-                  data-en="Chrome extension and SaaS platform used by thousands of users: full-stack features, Stripe subscriptions and webhooks, frontend migration, performance optimization, and production debugging.">
-                  Extensión de Chrome y plataforma SaaS usada por miles de usuarios: funcionalidades full-stack, Stripe
-                  con suscripciones y webhooks, migración del frontend, optimización de performance y debugging
-                  productivo.</p>
-                <div class="tech"><span>Python</span><span>Django</span><span>Vue.js</span><span>JavaScript</span><span>Docker</span><span>Stripe</span></div>
+                <div class="tech"><span>Python</span><span>Django</span><span>FastAPI</span><span>React</span><span>Vue.js</span><span>Node.js</span><span>PostgreSQL</span><span>Docker</span><span>AWS</span></div>
               </article>
             </div>
           </div>
@@ -1937,46 +1810,6 @@
                   Aplicación Android para reservas de canchas de fútbol, tenis y pádel: interfaces, flujos de reserva y
                   navegación mobile.</p>
                 <div class="tech"><span>React Native</span><span>JavaScript</span></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-spacer"></div>
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <article class="card tl-card">
-                <h3 class="tl-role">Full-Stack Developer</h3>
-                <div class="tl-company" data-en="FreePreTrip · CoopApp · Devecoop">FreePreTrip · CoopApp · Devecoop
-                </div>
-                <div class="tl-meta"><span><svg width="14" height="14">
-                      <use href="#i-cal" />
-                    </svg><span data-en="Aug 2019 — May 2020">Ago. 2019 — May. 2020</span></span></div>
-                <p class="tl-desc"
-                  data-en="PWA to digitize school-bus pre-trip inspections, and an app to automate cooperative administrative processes: interfaces, backend, database, and testing.">
-                  PWA para digitalizar inspecciones previas al viaje de autobuses escolares, y una aplicación para
-                  automatizar procesos administrativos de cooperativas: interfaces, backend, base de datos y pruebas.
-                </p>
-                <div class="tech"><span>React</span><span>PWA</span><span>Node.js</span></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-spacer"></div>
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <article class="card tl-card">
-                <h3 class="tl-role">Full-Stack Developer</h3>
-                <div class="tl-company">Betterez · Devecoop</div>
-                <div class="tl-meta"><span><svg width="14" height="14">
-                      <use href="#i-cal" />
-                    </svg><span data-en="Feb 2018 — Aug 2019">Feb. 2018 — Ago. 2019</span></span></div>
-                <p class="tl-desc"
-                  data-en="International bus booking and ticketing platform: new features, testing, legacy-code refactoring, and data migrations.">
-                  Plataforma internacional de reserva y emisión de boletos de autobús: nuevas funcionalidades, pruebas,
-                  refactoring de código legacy y migraciones de datos.</p>
-                <div class="tech"><span>Node.js</span><span>Vue.js</span><span>MongoDB</span><span>AWS</span></div>
               </article>
             </div>
           </div>
@@ -2075,6 +1908,9 @@
             <div class="flow"><span data-en="DOCS">DOCS</span><i>→</i><span>EMBEDDINGS</span><i>→</i><span
                 data-en="VECTOR SEARCH">BÚSQUEDA</span><i>→</i><span>LLM</span></div>
             <div class="tech"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Vector Search</span></div>
+            <div class="project-foot"><svg width="14" height="14">
+                <use href="#i-check" />
+              </svg><span data-en="Client project · private code">Proyecto de cliente · código privado</span></div>
           </article>
           <article class="card project-card reveal">
             <div class="project-top"><svg width="28" height="28">
@@ -2088,6 +1924,9 @@
               Stripe, webhooks, migración del frontend y performance.</p>
             <div class="flow"><span data-en="EXTENSION">EXTENSIÓN</span><i>→</i><span>DJANGO</span><i>→</i><span>STRIPE</span></div>
             <div class="tech"><span>Django</span><span>Vue.js</span><span>PostgreSQL</span><span>Stripe</span></div>
+            <div class="project-foot"><svg width="14" height="14">
+                <use href="#i-check" />
+              </svg><span data-en="Client project · private code">Proyecto de cliente · código privado</span></div>
           </article>
           <article class="card project-card reveal">
             <div class="project-top"><svg width="28" height="28">
@@ -2100,6 +1939,9 @@
               Sistema para digitalizar licitaciones y compras internas de un banco: solicitudes, proveedores,
               presupuestos, aprobaciones multinivel, permisos avanzados y auditoría.</p>
             <div class="tech"><span>Python</span><span>DRF</span><span>PostgreSQL</span><span>E2E</span></div>
+            <div class="project-foot"><svg width="14" height="14">
+                <use href="#i-check" />
+              </svg><span data-en="Client project · private code">Proyecto de cliente · código privado</span></div>
           </article>
           <article class="card project-card reveal">
             <div class="project-top"><svg width="28" height="28">
@@ -2112,6 +1954,9 @@
               Módulo interno de scoring y gestión de riesgos: lógica de negocio, vistas responsive, permisos por
               perfiles y pruebas end-to-end.</p>
             <div class="tech"><span>Django</span><span>HTMX</span><span>PostgreSQL</span></div>
+            <div class="project-foot"><svg width="14" height="14">
+                <use href="#i-check" />
+              </svg><span data-en="Client project · private code">Proyecto de cliente · código privado</span></div>
           </article>
           <article class="card project-card reveal">
             <div class="project-top"><svg width="28" height="28">
@@ -2125,6 +1970,9 @@
               procesamiento asíncrono y contexto en cache.</p>
             <div class="flow"><span>WHATSAPP</span><i>→</i><span>CELERY / REDIS</span><i>→</i><span>POSTGRES</span></div>
             <div class="tech"><span>Django</span><span>Celery</span><span>Redis</span></div>
+            <div class="project-foot"><svg width="14" height="14">
+                <use href="#i-check" />
+              </svg><span data-en="Client project · private code">Proyecto de cliente · código privado</span></div>
           </article>
           <article class="card project-card reveal">
             <div class="project-top"><svg width="28" height="28">
@@ -2138,6 +1986,10 @@
               estructurada con Pydantic, fallbacks, metadata y tests.</p>
             <div class="flow"><span>PROMPT</span><i>→</i><span>OPENAI</span><i>→</i><span>PYDANTIC</span></div>
             <div class="tech"><span>Python</span><span>OpenAI API</span><span>Pydantic</span></div>
+            <a class="project-foot" href="https://github.com/BrianClaros/hielito-story-generator" target="_blank"
+              rel="noopener noreferrer"><svg width="14" height="14">
+                <use href="#i-github" />
+              </svg><span data-en="View code on GitHub">Ver código en GitHub</span> →</a>
           </article>
         </div>
       </div>
@@ -2157,10 +2009,10 @@
                 <use href="#i-mail" />
               </svg></div>
             <p class="contact-text"
-              data-en="I'm open to AI Product Engineer, Full-Stack AI, Solutions Engineer, and Senior Software Engineer roles, especially in teams that value ownership, integrations, automation, and scalable products.">
-              Estoy abierto a roles de AI Product Engineer, Full-Stack AI, Solutions Engineer y Senior Software
-              Engineer, especialmente en equipos que valoren ownership, integraciones, automatización y productos
-              escalables.</p>
+              data-en="I'm open to remote or hybrid AI Product Engineer, Full-Stack AI, Solutions Engineer, and Senior Software Engineer roles, especially in teams that value ownership, integrations, automation, and scalable products.">
+              Estoy abierto a roles remotos o híbridos de AI Product Engineer, Full-Stack AI, Solutions Engineer y
+              Senior Software Engineer, especialmente en equipos que valoren ownership, integraciones, automatización
+              y productos escalables.</p>
             <div class="contact-actions">
               <a class="btn btn-primary" href="mailto:brianclarosmaldonado@gmail.com"><svg width="18" height="18">
                   <use href="#i-mail" />
