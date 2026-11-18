@@ -5,7 +5,7 @@
 Buenos Aires, Argentina  
 [brianclarosmaldonado@gmail.com](mailto:brianclarosmaldonado@gmail.com) | +54 9 11 6540-2384  
 GitHub: github.com/brianclaros | LinkedIn: linkedin.com/in/brian-alejandro-claros-maldonado  
-Portfolio: [brianclaros.github.io/portfolio/](https://brianclaros.github.io/portfolio/)
+Portfolio: [brianclaros.github.io](https://brianclaros.github.io/)
 
 ---
 
