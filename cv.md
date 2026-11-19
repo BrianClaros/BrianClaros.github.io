@@ -34,14 +34,13 @@ Experiencia en productos de **banca/fintech, SaaS, travel, mobile, extensiones C
 | **Frontend** | React.js, Vue.js, React Native, JavaScript, TypeScript, HTML5, CSS3, HTMX, Tailwind, Bootstrap |
 | **Backend** | Python, Django, Django REST Framework, FastAPI, Node.js, Express.js, APIs REST |
 | **AI-Assisted Development** | Claude Code, GitHub Copilot, OpenCode, OpenAI Codex, Gemini, AI-assisted coding, code review, debugging, refactoring, test generation |
-| **IA / LLM Integrations** | RAG (Retrieval-Augmented Generation), búsqueda vectorial, embeddings, OpenAI API, Generative AI, Prompt Engineering, structured outputs, Pydantic validation, automation workflows |
+| **IA / LLM Integrations** | MCP (Model Context Protocol), RAG (Retrieval-Augmented Generation), búsqueda vectorial, embeddings, OpenAI API, Generative AI, Prompt Engineering, structured outputs, Pydantic validation, automation workflows |
 | **Bases de Datos** | PostgreSQL, MongoDB, MySQL, Redis |
 | **Arquitectura / Backend** | APIs REST, autenticación, autorización, permisos, procesamiento asíncrono, webhooks, lógica de negocio |
 | **Testing / Calidad** | Unit Testing, Integration Testing, End-to-End Testing, debugging, refactoring, performance optimization |
 | **Infraestructura / DevOps** | Docker, Linux, Git, GitHub, AWS, Gunicorn, Nginx |
 | **Integraciones** | Stripe, WhatsApp Business API, OpenAI API, Celery, Redis |
 
-**AI-first workflow:** uso cotidiano de **Claude Code y GitHub Copilot** para desarrollar, revisar, validar y corregir código generado con asistencia de IA dentro del ciclo habitual de desarrollo.
 
 ---
 
@@ -64,7 +63,18 @@ Experiencia en productos de **banca/fintech, SaaS, travel, mobile, extensiones C
 
 ---
 
-### Plataforma Conversacional basada en RAG — *Desarrollador Full Stack*
+### Servidor MCP para automatización de tareas internas — *AI Engineer*
+
+**Nov 2026 – Presente | Cooperativa de Trabajo Devecoop Ltda.**
+
+**Stack:** Python · MCP (Model Context Protocol) · Pydantic · pytest
+
+- Participo en el desarrollo de un **servidor MCP** que conecta asistentes de IA como **Claude Code y OpenCode** con la documentación y las herramientas internas de una organización, para automatizar tareas repetitivas. Proyecto en desarrollo.
+- Primera etapa: consulta en lenguaje natural sobre documentación interna con citas a la fuente; luego, integración con sistemas internos con confirmación humana.
+
+---
+
+### Plataforma Conversacional basada en RAG — *AI Engineer*
 
 **Sep 2026 – Presente | Cooperativa de Trabajo Devecoop Ltda.**
 
@@ -73,7 +83,7 @@ Experiencia en productos de **banca/fintech, SaaS, travel, mobile, extensiones C
 - Participación en el diseño y desarrollo de una arquitectura de **Retrieval-Augmented Generation (RAG)** creada desde cero e integrada con una interfaz conversacional.
 - La solución combina recuperación de documentos, búsqueda vectorial, *embeddings*, recuperación de información contextual y generación de respuestas mediante LLM.
 - Contribuí a la arquitectura inicial, la implementación del backend con **FastAPI**, la estrategia de recuperación de datos y el almacenamiento vectorial.
-- Participé en la integración de LLMs y en la toma de decisiones técnicas necesarias para llevar la solución a producción.
+- Participo en la integración de LLMs y en las decisiones técnicas del proyecto, actualmente en desarrollo.
 
 ---
 
@@ -190,18 +200,6 @@ Experiencia en productos de **banca/fintech, SaaS, travel, mobile, extensiones C
 - Trabajé sobre optimización de performance y refactoring de código legacy.
 - Colaboré en migraciones de bases de datos.
 - Trabajé con servicios e infraestructura de **Amazon Web Services**.
-
----
-
-### Secretaría de Asuntos Docentes — *Prácticas Profesionales*
-
-**Feb 2016 – Dic 2016 | Quilmes, Avellaneda y Berazategui**
-
-**Stack:** AngularJS · JavaScript · HTML5 · CSS3 · Bootstrap · PHP · PostgreSQL
-
-- Desarrollé nuevas funcionalidades y un panel de administración para un sistema de preguntas frecuentes.
-- Participé en análisis, implementación y mantenimiento de funcionalidades web.
-- Trabajé en frontend, integración con backend y persistencia de datos.
 
 ---
 

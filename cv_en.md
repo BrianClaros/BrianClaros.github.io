@@ -34,14 +34,12 @@ Experience in **banking/fintech, SaaS, travel, mobile, Chrome extensions, chatbo
 | **Frontend** | React.js, Vue.js, React Native, JavaScript, TypeScript, HTML5, CSS3, HTMX, Tailwind, Bootstrap |
 | **Backend** | Python, Django, Django REST Framework, FastAPI, Node.js, Express.js, REST APIs |
 | **AI-Assisted Development** | Claude Code, GitHub Copilot, OpenCode, OpenAI Codex, Gemini, AI-assisted coding, code review, debugging, refactoring, test generation |
-| **AI / LLM Integrations** | RAG (Retrieval-Augmented Generation), vector search, embeddings, OpenAI API, Generative AI, Prompt Engineering, structured outputs, Pydantic validation, automation workflows |
+| **AI / LLM Integrations** | MCP (Model Context Protocol), RAG (Retrieval-Augmented Generation), vector search, embeddings, OpenAI API, Generative AI, Prompt Engineering, structured outputs, Pydantic validation, automation workflows |
 | **Databases** | PostgreSQL, MongoDB, MySQL, Redis |
 | **Architecture / Backend** | REST APIs, authentication, authorization, permissions, asynchronous processing, webhooks, business logic |
 | **Testing / Quality** | Unit Testing, Integration Testing, End-to-End Testing, debugging, refactoring, performance optimization |
 | **Infrastructure / DevOps** | Docker, Linux, Git, GitHub, AWS, Gunicorn, Nginx |
 | **Integrations** | Stripe, WhatsApp Business API, OpenAI API, Celery, Redis |
-
-**AI-first workflow:** daily use of **Claude Code and GitHub Copilot** to build, review, validate, and correct AI-assisted code as part of the regular development cycle.
 
 ---
 
@@ -64,7 +62,18 @@ Experience in **banking/fintech, SaaS, travel, mobile, Chrome extensions, chatbo
 
 ---
 
-### RAG-based Conversational Platform — *Full Stack Developer*
+### MCP Server for Internal Task Automation — *AI Engineer*
+
+**Nov 2026 – Present | Cooperativa de Trabajo Devecoop Ltda.**
+
+**Stack:** Python · MCP (Model Context Protocol) · Pydantic · pytest
+
+- Involved in building an **MCP server** that connects AI assistants such as **Claude Code and OpenCode** to an organization's internal documentation and tools, to automate repetitive tasks. Work in progress.
+- First stage: natural-language querying over internal documentation with source citations; next, integration with internal systems with human confirmation.
+
+---
+
+### RAG-based Conversational Platform — *AI Engineer*
 
 **Sep 2026 – Present | Cooperativa de Trabajo Devecoop Ltda.**
 
@@ -73,7 +82,7 @@ Experience in **banking/fintech, SaaS, travel, mobile, Chrome extensions, chatbo
 - Involved in designing and building a **Retrieval-Augmented Generation (RAG)** architecture from scratch, integrated with a conversational interface.
 - The solution combines document retrieval, vector search, *embeddings*, contextual information retrieval, and LLM-based answer generation.
 - Contributed to the initial architecture, the **FastAPI** backend implementation, the data-retrieval strategy, and vector storage.
-- Took part in LLM integration and in the technical decisions required to take the solution to production.
+- Involved in LLM integration and in the project's technical decisions; currently in development.
 
 ---
 
@@ -190,18 +199,6 @@ Experience in **banking/fintech, SaaS, travel, mobile, Chrome extensions, chatbo
 - Worked on performance optimization and legacy code refactoring.
 - Collaborated on database migrations.
 - Worked with **Amazon Web Services** services and infrastructure.
-
----
-
-### Secretaría de Asuntos Docentes — *Professional Internship*
-
-**Feb 2016 – Dec 2016 | Quilmes, Avellaneda and Berazategui**
-
-**Stack:** AngularJS · JavaScript · HTML5 · CSS3 · Bootstrap · PHP · PostgreSQL
-
-- Built new features and an admin panel for a frequently asked questions system.
-- Took part in the analysis, implementation, and maintenance of web features.
-- Worked on frontend, backend integration, and data persistence.
 
 ---
 
